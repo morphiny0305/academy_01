@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
+
+<body>
+  <form onsubmit="check();">
+    <input type="text" name="email" id="email" /><br />
+
+    <input type="submit" value="submit" />
+  </form>
+</body>
+<script>
+  function check() {
+    // alert(document.getElementById("email").value);
+    var email = document.getElementById("email").value;
+    var exptext = /^[A-Za-z0-9_\.\-]+@[A-Za-z0-9\-]+\.[A-Za-z0-9\-]+/;
+    if (exptext.test(email) == false) {
+      //이메일 형식이 알파벳+숫자@알파벳+숫자.알파벳+숫자 형식이 아닐경우        
+      alert("이 메일형식이 올바르지 않습니다.");
+    document.addjoin.email.focus();
+      return false;
+    }
+  }
+</script>
+
+</html>

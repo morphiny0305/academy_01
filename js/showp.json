@@ -1,0 +1,7 @@
+showDress({
+  "items" :[
+  {"id" : 9, "price" : 900, "title" : "yumyum"},
+  {"id" : 10, "price" : 800, "title" : "hahaha"},
+  {"id" : 11, "price" : 700, "title" : "ummmmm"}
+]
+});

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>리턴 이해하기</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <style>
+    * {
+      margin: 0 auto;
+      box-sizing: border-box;
+    }
+
+    .wrap {
+      width: 60%;
+      height: 70%;
+      background: thistle;
+      margin: 10% auto;
+    }
+
+    h1 {
+      text-align: center;
+      text-shadow: 0 0 10px #fff;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <h1>.................................</h1>
+  </div>
+
+  <script>
+    function 멍멍() {
+      console.log('야옹');
+      return 9 + 9 // 종료 .........
+      console.log('얌얌'); // 리턴 밑에 있는 것은 출력 x
+    };
+    console.log(멍멍());
+
+    function vat(a) {
+      return a * 0.1;
+    };
+    console.log(vat(60000));
+    console.log((1.1 + 0.3).toFixed(1));
+
+
+    function elPrice(a, b) {
+      let result = a * 0.9; // 10% 할인 된 가격
+      if (b == true) {
+        result = result - (a * 0.15); //15% 또 할인
+      };
+      return result;
+    };
+
+    console.log(elPrice(10000, true));
+    console.log(elPrice(10000, false));
+  </script>
+</body>
+
+</html>

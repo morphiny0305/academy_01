@@ -1,0 +1,67 @@
+@font-face {
+  font-family: 'insungitCutelivelyjisu';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/insungitCutelivelyjisu.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+span,button,input {display: block;}
+
+section {
+  font-family: 'insungitCutelivelyjisu';
+  position: relative;
+  width: 100%;
+  margin: auto;
+  height: 100vh;
+  background: url(../images/cat-glass.jpg) no-repeat center;
+  background-size: cover;
+  background-position: 0px;
+}
+
+#logo-btn {
+  width: 175px; 
+  height: 175px; 
+  background: url(../images/paw.png) no-repeat center; 
+  filter: invert(100%); 
+  background-size:cover; 
+  position: absolute; 
+  top: 15px; 
+  left: 10px; 
+}
+
+.text-box {
+  width: 300px; 
+  height: 350px;
+  border: 3px solid #fff; 
+  background-image: linear-gradient(-20deg, #b721ff 0%, #21d4fd 100%); 
+  position: absolute; 
+  right: 10%; 
+  top: 10px;
+  /* left: 0;  */
+  /* margin: auto; */
+  display: flex; 
+  flex-direction: column;
+  align-items: center; 
+  line-height: 1.5;
+}
+
+.title {
+  color: #fff; 
+  text-shadow: 2px 2px 2px #333; 
+  text-align: center; 
+  font-size: 20px; 
+  padding: 15px 0; 
+}
+
+.messages {
+  color: #fff; 
+  text-shadow: 2px 2px 2px #333; 
+  text-align: center; 
+  font-size: 16px; 
+  padding: 3px 0; 
+}
+
+hr, input {
+  width: 270px;
+}
+

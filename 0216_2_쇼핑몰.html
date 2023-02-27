@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>쇼핑몰</title>
+  <link rel="stylesheet" href="./css/0216_쇼핑몰.css">
+</head>
+<body>
+  <h1>자 바 스 크 립 트 활 용 레 이 아 웃 만 들 기</h1>
+  <section class="wrap">
+    <div class="object">
+      <div class="img-box"><img src="./images/icon/icon1.png" alt=""></div>
+      <div class="text-box">
+        <h2 class="title" id="title">김멍멍</h2>
+        <ul>
+          <li>등 록 : <span id="text1">02. 16.</span></li>
+          <li>특 징 : <span id="text2">귀여움 x 100</span></li>
+        </ul>
+      </div>
+      <button class="open-btn">누르고십지</button>
+    </div>
+    <div class="object">
+      <div class="img-box">
+        <img src="./images/icon/icon2.png" alt="">
+        <!-- <img src="http://via.placeholder.com/600" alt=""> -->
+      </div>
+      <div class="text-box">
+        <h2 class="title" id="title">김멍멍</h2>
+        <ul>
+          <li>등 록 : <span id="text1">02. 16.</span></li>
+          <li>특 징 : <span id="text2">귀여움</span></li>
+        </ul>
+      </div>
+      <button class="open-btn">누르고십지</button>
+    </div>
+    </div>
+<button class="more-btn">MOREEEEEE</button>
+  </section>
+
+  <script>
+    // 데이터바인딩
+    let products =[
+      {id:0, price:'앙큼 $ 100', title: '깜찍이'},
+      {id:1, price:'꺄륵 $ 200', title: '동동이'},
+      {id:2, price:'상큼 $ 300', title: '트로피카나'},
+      {id:3, price:'귀염 $ 400', title: '아롱이'},
+    ]; //서버에서 이런 형식으로 데이터를 제공함 <-이라고 가정
+
+    let theTime = new Date().toLocaleString();
+
+
+    document.querySelectorAll('h2')[1].innerHTML = products[1].title;
+    document.querySelectorAll('#text2')[1].innerHTML = products[1].price;
+
+    document.querySelectorAll('#text1')[0].innerHTML = theTime;
+    document.querySelectorAll('#text1')[1].innerHTML = theTime;
+  </script>
+</body>
+</html>

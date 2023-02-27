@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./css/야옹호텔-2.css">
+  <section>
+    <div id="logo-btn"></div>
+    <div class="text-box">
+      <div class="title">야 옹</div>
+      <hr>
+      <div class="messages" id="message">내용</div>
+      <div class="messages" id="message2">내용</div>
+      <div class="messages" id="message3">내용</div>
+    </div>
+    
+  </section>
+</head>
+<body>
+  <script>
+    let elMessage = document.getElementById('message');
+    let elMessage2 = document.getElementById('message2');
+    let elMessage3 = document.getElementById('message3');
+
+    let sum=0; // 선언
+        /* sum = 0;
+        sum += 1;// sum = sum + 1;
+        sum += 2;
+        sum += 3;
+        sum += 4;
+        sum += 5; */
+    for(var i = 1 ; i < 6 ; i ++){
+      sum +=i;
+      
+    };
+    console.log(sum);
+    elMessage.innerHTML = '1부터 5까지 더한 결과 : ' + sum;
+
+
+    let elNumber=0;
+    for(var i = 1 ; i < 101 ; i ++){
+      elNumber +=i;
+
+    };
+    console.log(elNumber);
+    elMessage2.innerHTML = '1부터 100까지 더한 결과 : ' + elNumber;
+  </script>
+
+  <script>
+    let season = ['봄', '여름', '가을', '겨울'];
+    elMessage3.innerHTML = season[1];
+
+    for(var i = 0 ; i < season.length ; i ++){
+      console.log(season);
+
+    };
+  </script>
+</body>
+</html>

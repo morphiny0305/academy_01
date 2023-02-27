@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>손흥민을찾아라</title>
+  <link rel="stylesheet" href="./css/야옹호텔.css">
+  
+</head>
+<body>
+  <section>
+    <div id="logo-btn"></div>
+    <div class="text-box">
+      <div class="title">HOTEL<br>예약 가능</div>
+      <hr>
+      <div class="messages" id="message">내용</div>
+      <div class="messages" id="message2">내용2</div>
+      <div class="messages" id="message3">내용3</div>
+      <hr>
+      <div class="messages" id="mrSon">여깄지</div>
+      <hr>
+      <div class="messages" id="plusNumber">더하기해보시게</div>
+    </div>
+    
+  </section>
+
+  <script>// 안녕 나는 소농민 <이라고 출력되게하기
+    let elMan = {
+      name : '손흥민',
+      sayHi : function(){
+      return '안녕 나는 우주최강 야옹이 ' + this.name + ' 이란다. 사인받아라.';
+    }};
+    
+    // console.log(elMan.sayHi()); 
+    let elMemo = document.getElementById('mrSon');
+    elMemo.innerHTML = elMan.sayHi();
+  </script>
+
+  <script> //배열 전부 더하기
+    let elNumber = {
+      data : [1, 2, 3, 4, 5]
+    };
+    elNumber.allPlus = function(){ 
+      var sum = 0;
+      this.data.forEach(function(a) { //a = 배열의 개별데이터
+        sum = sum + a;
+      }); 
+    console.log(sum);
+    return sum;
+    };
+    let elPlus = document.getElementById('plusNumber');
+    elPlus.innerHTML = elNumber.allPlus();
+  </script>
+
+  <script>
+    let elMessage = document.getElementById('message');
+    let firstHotel = {
+    name: '야옹',
+    rooms: 100,
+    booked: 30,
+    roomTypes:['트윈', '더블', '싱글', '스위트', '강아지방석', '캣타워'], //array 배열
+    freeroom: function(){
+      return firstHotel.rooms - firstHotel.booked;
+    }};
+
+    // 내용에 남은 방1
+    elMessage.innerHTML = firstHotel.name +' Hotel : ' + firstHotel.freeroom() + ' 개';
+    
+
+
+    // 호텔 - 계산 디폴트 템플릿
+    let doggoHotel = new hotel('Doggo', 150, 91);
+    let cathyHotel = new hotel('Cathy', 210, 62);
+
+    function hotel(name, rooms, booked){//파라미터, 프라퍼티, 인자 => 임시변수
+      this.name = name;
+      this.rooms = rooms;
+      this.booked = booked;
+      this.roomVancy = function(){
+        return this.rooms - this.booked;
+      }
+    };
+    // console.log(doggoHotel.name);
+    
+    // doggo 호텔 = > 내용2
+    let elMessage2 = document.getElementById('message2');
+    elMessage2.innerHTML = doggoHotel.name +' Hotel : ' + doggoHotel.roomVancy() + ' 개';
+    // cathy 호텔 = > 내용3
+    let elMessage3 = document.getElementById('message3');
+    elMessage3.innerHTML = cathyHotel.name +' Hotel : ' + cathyHotel.roomVancy() + ' 개';
+  </script>
+</body>
+</html>

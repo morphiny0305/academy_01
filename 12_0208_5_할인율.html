@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>0208_5_할인율</title>
+  <link rel="stylesheet" href="./css/야옹호텔.css">
+  
+</head>
+<body>
+  <section>
+    <div id="logo-btn"></div>
+    <div class="text-box">
+      <div class="title">야 옹</div>
+      <hr>
+      <div class="messages" id="message">할인 계산하기</div>
+      <hr>
+      <span class="messages cat_title">원래가격</span>
+      <input type="text" id="oPrice">
+      <span class="messages cat_price">할인율</span>
+      <input type="text" id="rate">
+      <button id="show">해줘</button>
+      <hr>
+      <div class="messages" id="result"></div>
+
+    </div>
+    
+  </section>
+  <script>
+    let elShow = document.getElementById('show');
+    elShow.addEventListener("click", function(){
+      // 원래 가격, 할인율 입력 input.value
+      let originPrice = document.getElementById('oPrice').value;
+      let discountPrice = document.getElementById('rate').value;
+
+      // 계산 = 절약한 금액
+      const savePrice = originPrice * (discountPrice/100);
+      
+      // 내가 결제할 돈 = 최종 가격 = 원래 가격 - 할인 금액
+      const resultMoney = originPrice - savePrice;
+
+      document.getElementById('result').innerHTML = '상품의 원래 가격은 ' + originPrice + ' 원 이고, 할인율은 ' + discountPrice + ' % 입니다.<br>' + savePrice + ' 원을 절약하여 ' +  resultMoney + ' 원에 살 수 있읍니다.';
+
+      let elResult = document.getElementById('result');
+
+      /* elResult.innerHTML = `상품의 원래 가격은 ${originPrice} 원 이고, 할인율은 ${discountPrice}% 입니다. ${savePrice}원을 절약한 ${resultMoney}원에 살 수 있읍니다.`;  */
+    });
+    
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>웰컴투야옹월드</title>
+  <style>
+    @font-face {
+    font-family: 'insungitCutelivelyjisu';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/insungitCutelivelyjisu.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+    section{font-family: 'insungitCutelivelyjisu';
+      position: relative;
+      width: 100%; margin: auto;
+      height: 100vh;
+      background: url(./images/background3.jpg) no-repeat center; background-size: cover; background-position: 0px;}
+      button{font-family: 'insungitCutelivelyjisu';}
+      #logo-btn{
+        width: 175px; height: 175px;
+        background: url(./images/paw.png) no-repeat center;
+        filter: invert(100%);
+        background-size: contain;
+        position: absolute; top: 15px; left: 10px;
+        }
+
+      .text-box{width: 200px; height: 100vh;
+        border: 3px solid #fff; background-image: linear-gradient(120deg, #e0c3fc 0%, #8ec5fc 100%);
+        position: absolute; right: 50px; padding-top: 50px;}
+
+        .title-box{color: #fff;  text-shadow: 2px 2px 2px #333;
+        width: 200px;
+        text-align: center; font-size: 25px;
+        padding:15px 0;}
+
+      .messages{color: #fff; text-shadow: 2px 2px 2px #333;
+        width: 200px; 
+        text-align: center;font-size: 18px;
+        padding:8px 0;}
+      hr{width: 170px;}
+      .alert-box{
+        position: absolute;
+        z-index: 10;
+        background-image: linear-gradient(120deg, #89f7fe 0%, #66a6ff 100%);
+        padding: 20px;
+        color: #fff;
+        text-shadow: 2px 2px 2px #333;
+        border-radius: 5px;
+        width: 200px;
+        text-align: center;
+        left: 0;
+        right: 0;
+        margin: auto;
+        top: 200px;
+        display: none;
+      }
+      #show{position: absolute; right: 100px; z-index: 10; top: 300px;}
+      #hide{position: absolute; right: 110px; z-index: 10; top: 330px;}
+  </style>
+  
+</head>
+<body>
+  <section>
+    <div id="logo-btn"></div>
+    <div class="alert-box" id="alert">
+      <p id="title">야옹야옹?</p>
+      <button id="close">왜웅</button>
+    </div>
+    <!-- <button onclick="document.getElementById('alert').style.display='block';">까악</button> -->
+    <!-- <button onclick="clickBtn()">까악 까악 까마귀</button> -->
+    <button id="show" onclick="clickBtn('block');">까악 까악</button>
+    <button id="hide" onclick="clickBtn('none');">까마귀</button>
+
+    
+    <div class="text-box">
+      <div class="title-box">HOTEL<br>예약 정보</div>
+      <hr>
+      <div class="messages" id="message">내용</div>
+      <div class="messages" id="message2">내용2</div>
+      <div class="messages" id="message3">내용3</div>
+      <hr>
+    </div>
+  </section>
+<script>
+  // 알림창 열기 1
+  /* function clickBtn(){
+    document.getElementById('alert').style.display='block';
+  }; */
+    // 알림창 열기 2 = 이벤트 리스너
+/*   let clickRaven = document.getElementById('raven-btn');
+  clickRaven.addEventListener("click", function(){
+      document.getElementById('alert').style.display='block';}) */
+
+  // 알림창 열기 3 = 파라미터 활용하기
+  function clickBtn(para){ // 임시 변수 처럼 활용하기
+    document.getElementById('alert').style.display=para;
+  };
+  // clickBtn('block'); // 닫히다
+  // clickBtn('none'); // 열리다
+
+  // 알림창 개별로 닫기
+
+document.getElementById('close').addEventListener("click", function(){
+      document.getElementById('alert').style.display='none';})
+</script>
+
+
+  <script>
+    let elMessage = document.getElementById('message');
+    let firstHotel = {
+    name: '야옹',
+    rooms: 100,
+    booked: 30,
+    roomTypes:['트윈', '더블', '싱글', '스위트', '강아지방석', '캣타워'], //array 배열
+    freeroom: function(){
+      return firstHotel.rooms - firstHotel.booked;
+    }};
+
+    // 내용에 남은 방1
+    elMessage.innerHTML = firstHotel.name +' Hotel : ' + firstHotel.freeroom() + ' 개';
+    
+    // 호텔 - 계산 디폴트 템플릿
+    let doggoHotel = new hotel('Doggo', 150, 91);
+    let cathyHotel = new hotel('Cathy', 210, 62);
+
+    function hotel(name, rooms, booked){//파라미터, 프라퍼티, 인자 => 임시변수
+      this.name = name;
+      this.rooms = rooms;
+      this.booked = booked;
+      this.roomVancy = function(){
+        return this.rooms - this.booked;
+      }
+    };
+    console.log(doggoHotel.name);
+    
+    // doggo 호텔 = > 내용2
+    let elMessage2 = document.getElementById('message2');
+    elMessage2.innerHTML = doggoHotel.name +' Hotel : ' + doggoHotel.roomVancy() + ' 개';
+    // cathy 호텔 = > 내용3
+    let elMessage3 = document.getElementById('message3');
+    elMessage3.innerHTML = cathyHotel.name +' Hotel : ' + cathyHotel.roomVancy() + ' 개';
+
+    
+    let 
+  </script>
+</body>
+</html>

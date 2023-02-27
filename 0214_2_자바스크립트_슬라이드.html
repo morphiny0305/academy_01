@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>자바스크립트 슬라이드</title>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"
+      integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <style>
+      * {
+        margin: 0 auto;
+        box-sizing: border-box;
+      }
+      .slide_container {
+        width: 600vw;
+        height: 400px;
+        position: relative;
+        transition: all 1s;
+
+        /* margin-left: -100vw; */
+        /* transform: translateX(-200vw); */
+      }
+      .slide-box {
+        width: 100vw;
+        float: left;
+      }
+      .slide-box img {
+        width: 100%;
+        height: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>멍멍 왕왕</h1>
+    <div style="overflow: hidden">
+      <section class="slide_container">
+        <div class="slide-box">
+          <img src="./images/slide/slide_1.png" alt="슬라이드1" />
+        </div>
+        <div class="slide-box">
+          <img src="./images/slide/slide_2.png" alt="슬라이드1" />
+        </div>
+        <div class="slide-box">
+          <img src="./images/slide/slide_3.png" alt="슬라이드1" />
+        </div>
+        <div class="slide-box">
+          <img src="./images/slide/slide_4.png" alt="슬라이드1" />
+        </div>
+        <div class="slide-box">
+          <img src="./images/slide/slide_5.png" alt="슬라이드1" />
+        </div>
+        <div class="slide-box">
+          <img src="./images/slide/slide_6.png" alt="슬라이드1" />
+        </div>
+      </section>
+    </div>
+
+    <button class="slide_1">1</button>
+    <button class="slide_2">2</button>
+    <button class="slide_3">3</button>
+    <button class="next">next ></button>
+
+    <script>
+      $(function (){
+        $(".slide_1").on("click", function (){
+          $(".slide_container").css("transform", "translateX(0)");
+        });
+        $(".slide_2").on("click", function (){
+          $(".slide_container").css("transform", "translateX(-100vw)");
+        });
+        $(".slide_3").on("click", function (){
+          $(".slide_container").css("transform", "translateX(-200vw)");
+        });
+
+
+        // next 버튼이 다음 사진 보이도록
+        let nowPic = 1;
+        $(".next").on("click", function (){
+          /* if(nowPic == 1){
+            $(".slide_container").css("transform", "translateX(-100vw)")
+            nowPic += 1;
+            console.log(nowPic);
+          }else if(nowPic == 2){
+            $(".slide_container").css("transform", "translateX(-200vw)")
+            nowPic += 1;
+          }; */
+          $(".slide_container").css("transform", 'translateX(-' + nowPic + '00vw)');
+          nowPic += 1;
+        });
+      });
+    </script>
+  </body>
+</html>

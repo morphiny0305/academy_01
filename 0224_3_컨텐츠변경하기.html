@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/c07_0224.css" />
+    <style>
+      .boxbox{background: teal; color: #fff; font-weight: bold; transition: all ease 1s;}
+      .boxbox:active{transform: rotate( 360deg );}
+    </style>
+  </head>
+  <body>
+    <div id="page">
+      <h1 id="header">list</h1>
+      <h2>변경하고 수정하기</h2>
+      <ul>
+        <li id="one" class="hot"><em>신선한</em> 무화과</li>
+        <li id="two" class="hot">잣</li>
+        <li id="three" class="hot">꿀</li>
+        <li id="four">우야ㅏ아아앙</li>
+      </ul>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script>
+              /* $('#header').on('click', function(){
+            $('ul').attr('id','group');  //사자 이미지 클릭 시 상자에 테두리
+        }); */
+        let click = '20px';
+        $("#header").on({
+            mouseover: function(){
+              $('ul').attr('id','group');
+            },
+            mouseout: function(){
+              $('ul').removeAttr('id','group');
+            },
+            click: function(){
+              $('h2').css('margin-left', '+=20');
+              $('#header').css('margin-left', '+=20');
+            }
+        });
+        // 클릭할 때마다, margin-left 속성을 이용해서 20px씩 오른쪽으로 움직이기
+        // css 함수 .css()
+        $('h2').css({
+          'background-color' : '#fff',
+          'font-size' : '2em',
+          'color' : 'crimson',
+          'padding' : '10px 30px'
+        });
+      $(function(){
+        $("li:contains('잣')").text('멍멍');
+        $("li.hot").html(function(){ //컨텐츠 변경
+          return '<em>' + $(this).text() + '</em>';
+        });
+        // $('li#one').remove(); //지우기
+
+        // li.hot 요소에서 텍스트 앞에 + 기호를 추가 하세요.
+        $('li.hot').prepend('+');
+        $('li.hot').append(' ++');
+        
+        //ul 선택하여 .before함수로 <p>를 생성하고 클래스를 만들기
+          //그리고 배경색/글자색/특정스타일 변경해보기
+        $('ul').before('<p class="boxbox">새박스</p>');
+        // $('ul').before('<p></p>');
+        // $('p').addClass('complete');
+
+        // li 요소 중 제일 마지막 요소를 선택 .after()활용
+        // 새로운 li 태그 생성 > 태그 안에 클래스를 더하거나, em태그를 활용
+        $('li#four').after('<li class="boxbox">크킄...</li>')
+      });
+    </script>
+     <script>
+      // ul이나 li 뒷단에 forEach()를 활용하여 삽입
+      let myCars = [ //데이터 바인딩
+          {id:0, price: 25000, carBrand: 'KIA'},
+          {id:0, price: 65000, carBrand: 'HYUNDAI'},
+          {id:0, price: 95000, carBrand: 'VOLVO'}
+      ]
+
+      myCars.forEach((a, i)=>{
+          let $cars = `<li class="favorite cool"><em>car brand ${myCars[i].carBrand}</em></li>`;
+              $('li#four').after($cars);
+              // $('ul')[0].append($cars);
+      })
+  </script>
+  </body>
+</html>

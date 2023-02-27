@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>수학객체</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+</head>
+
+<body>
+  <h1>임의의 숫자</h1>
+  <h2 id="result"></h2>
+</body>
+<script>
+  let randomNum = Math.floor(Math.random()*10+1);
+  console.log(randomNum);
+
+  let showNum = Math.ceil(Math.random()*3);
+  console.log(showNum);
+
+  let game = prompt('안내면 진거');
+  let gameNum;
+  switch(game){
+    case '가위':
+    gameNum = 1;
+    break;
+    case '바위':
+    gameNum = 2;
+    break;
+    case '보':
+    gameNum = 3;
+    break;
+    default:
+    alert('가위바위보 모루냐');
+    location.reload();
+    break;
+  };
+
+  if(showNum == gameNum){
+    document.getElementById('result').innerHTML = '야바위에 재능이 있으시군요....';
+  }else{document.getElementById('result').innerHTML = 'ㅋㅋ또해보시던가';};
+</script>
+</html>

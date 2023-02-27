@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>0208_2</title>
+  <link rel="stylesheet" href="./css/야옹호텔.css">
+  
+</head>
+<body>
+  <section>
+    <div id="logo-btn"></div>
+    <div class="text-box">
+      <div class="title">야 옹</div>
+      <hr>
+      <div class="messages" id="message">내용</div>
+      <hr>
+      <span class="messages cat_title">야옹이이름</span>
+      <hr>
+      <span class="messages cat_price">얌얌 가격</span>
+    </div>
+    
+  </section>
+  <script>
+    let yumCat = {name:'김야옹', price: [100, 200, 300]};
+    document.querySelector('.cat_title').innerHTML = yumCat.name;
+    console.log(yumCat);
+
+    document.querySelector('.cat_price').innerHTML = yumCat.price[1] + ' 만원';
+  </script>
+
+</body>
+</html>

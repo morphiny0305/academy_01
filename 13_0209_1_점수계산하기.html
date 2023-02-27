@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>0209</title>
+  <link rel="stylesheet" href="./css/야옹호텔-2.css">
+  
+</head>
+<body>
+  <section>
+    <div id="logo-btn"></div>
+    <div class="text-box">
+      <div class="title">0209</div>
+      <hr>
+      <div class="messages" id="message">자격증 합격</div>
+      <hr>
+      <span class="messages test1">1차 점수</span>
+      <input type="text" id="point1">
+      <span class="messages test2">2차 점수</span>
+      <input type="text" id="point2">
+      <br>
+      <button id="show">해줘</button>
+      <div class="messages" id="result"></div>
+    </div>
+    
+  </section>
+  <script>
+    /*  자격증 합격 > 1차 : 60점 이상
+    2차 : 60점 이상
+    testPass() > 합격 함수생성하기
+    if 구문 활용 > 합격조건 120점 이상 획득 : 합격
+    불합격조건 */
+
+    /* let showResult = document.querySelector('#show');
+    showResult.addEventListener("click", function(){
+      // 자격증 합격 > 1차 : 60점 이상
+    let elPoint1 = document.getElementById('point1').value;
+    //  2차 : 60점 이상
+    let elPoint2 = document.getElementById('point2').value;
+    if(elPoint1 >= 60 && elPoint2 >=60){alert('합격');}else{alert('탈락');}
+    
+    }) */
+    
+    
+    // testPass() > 합격 함수생성하기
+    let showResult = document.querySelector('#show');
+    
+    
+    // if 구문 활용 > 합격조건 120점 이상 획득 : 합격
+    // 불합격조건
+    showResult.addEventListener('click', function(){
+      let elPoint1 = document.getElementById('point1').value;
+      console.log('1차점수 '+elPoint1);
+      let elPoint2 = document.getElementById('point2').value;
+      console.log('2차점수 '+elPoint2);
+
+      testPass(elPoint1, elPoint2);
+    });
+    function testPass(elPoint1, elPoint2){
+      let allPoint = parseInt(elPoint1) + parseInt(elPoint2);
+      console.log(allPoint);
+      console.log(typeof allPoint);
+
+      if(allPoint < 120){
+        console.log('불합격..........');
+      }else if(allPoint >= 120){
+        console.log('합격..');
+      }else{
+        console.log('불합격..');
+      }
+    };
+
+    // testPass(50, 50);
+  </script>
+
+</body>
+</html>

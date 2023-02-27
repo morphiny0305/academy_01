@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+</head>
+<body id="theBody">
+  <button id="btn">배경색 바꾸기</button>
+
+  <script> //자바스크립트
+    /* const colors = ['#4287f5', '#ffe600', '#8cff00', '#ff002f', '#ffabca'];
+    
+    const bg = document.querySelector('body');
+    const btn = document.getElementById('btn');
+    btn.addEventListener('click', function(){
+      let random = Math.floor(Math.random() * colors.length);
+      // console.log(colors[random]);
+      let colorName = colors[random];
+      // bg.style.backgroundColor = colors[random];
+    }); */
+  </script>
+  <script> //제이쿼리
+    $("#btn").on("click", chColor);
+    function chColor(){
+      var colors = ['#4287f5', '#ffe600', '#8cff00', '#ff002f', '#ffabca'];
+      var random = Math.floor(Math.random() * colors.length);
+      $("#theBody").css("background-color", function(i){
+        console.log(colors[random]);
+        return colors[random];
+      });
+    };
+  </script>
+</body>
+</html>

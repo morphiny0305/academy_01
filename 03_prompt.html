@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>야옹야옹</title>
+  <style>
+    div{width: 400px; height: 200px; position: relative;}
+    p{border: 1px solid blue; height: 30px; text-align: center; line-height: 30px; float: left;}
+    span{border: 1px solid red; width: 100px; height: 30px; display: block; position: absolute; left: 120px; top: 16px; text-align: center; line-height: 30px;}
+  </style>
+</head>
+<body>
+  <h1>야옹</h1>
+  <div>
+    <p id="result">여기에다가 출력해줭 </p>
+    <span id="spam">날짜표기</span>
+  </div>
+  <h2>멍멍</h2>
+  <script>
+    var first = prompt('이름을 입력하세요');
+    let date = new Date();
+    
+    let elName = document.getElementById('result');
+    let elMessage = document.getElementById('spam');
+
+    elName.textContent = first;
+    elMessage.textContent= date;
+  </script>
+</body>
+</html>

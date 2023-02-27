@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>0208_4</title>
+  <link rel="stylesheet" href="./css/야옹호텔.css">
+  
+</head>
+<body>
+  <section>
+    <div id="logo-btn"></div>
+    <div class="text-box">
+      <div class="title">야 옹</div>
+      <hr>
+      <div class="messages" id="message">야옹잡스 태어난 연도</div>
+      <input type="text" id="answer">
+      <button id="send_answer">정답 제출</button>
+      <hr>
+      <span class="messages cat_title">이름</span>
+      <hr>
+      <span class="messages cat_price">얌얌</span>
+    </div>
+    
+  </section>
+  <script>
+    // 기능구현
+    /* 
+    1. 정답 = alert('야옹');
+    2. 3번의 기회 = 모두 틀리면 alert ('웨웅');
+    입력한 값 = '1950' = 정답 = 1번 출력 = 1. 정답 = alert('야옹');
+    버튼 누른 횟수 3회 이상 & 오답 = 2번 출력 = 2. 3번의 기회 (&&) 모두 틀리면 alert ('웨웅');
+    */
+    let elClick = 0; // 전역변수
+
+    
+    // let myAnswer = document.querySelector('#answer').value; //자바스크립트가 딱 1번 실행
+    let elSend = document.querySelector('#send_answer');
+    elSend.addEventListener("click", function(){
+      // 실행코드
+      elClick = elClick + 1; // elClick += 1;
+      let myAnswer = document.querySelector('#answer').value;
+      // console.log(elClick);
+    //   if(elClick<=3){if (myAnswer == 1950){alert('정답야옹')} else {alert('바보')};} else{alert('모든기회가 끝났다옹.')}
+
+      if(myAnswer=='1950'){
+        alert('정답을 맞췄군요..크킄ㄱ..');
+      }else if(elClick <=3 && myAnswer !='1950'){
+        alert('멍청이가 따로업군..');
+      }
+      else if(elClick >4 && myAnswer !='1950'){
+        alert('기회가.끗.낫.다.옹.')
+      }
+      
+
+    });
+
+  </script>
+
+</body>
+</html>

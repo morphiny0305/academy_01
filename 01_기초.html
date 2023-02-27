@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>우리집강아지 하얀강아지</title>
+</head>
+<body>
+  <h1>멍멍</h1>
+
+
+
+
+
+  <script>
+    // 재선언 O , 재할당 O 
+    // var name = prompt('이름을 입력하세요.');
+    var name = 'KIM'; //전역변수
+    var name = 'arong';
+    var name = parseInt ('1234.56789');
+
+
+    // 재선언 X , 재할당 O
+    let price = 1000;
+        price = 3000; //재할당
+    // let price = 4000;
+    let price__1 = 2000;
+    
+
+
+    // 재선언 X, 재할당 X
+    const vat = 400 * 0.1; //전역변수
+    // console.log(vat);
+
+    function 멍멍(){
+      var myName = '야옹'; //변수의 범위 _ 지역변수
+      console.log(myName);
+    }
+    
+
+    멍멍();
+  </script>
+</body>
+</html>

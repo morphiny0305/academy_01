@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>나만없어고양이</title>
+</head>
+<body>
+  <h2>호텔 남은 객실 수 출력</h2>
+  <div id="hotelRooms"></div>
+  <div>이거라도 사용하시겠읍니까</div>
+
+  <script>
+    var object = {
+      data: 'candy',
+      멍멍함수: function(){
+        console.log('새우깡');
+      }
+    };
+
+    let firstHotel = {
+      name: 'candy',
+      rooms: 100,
+      booked: 30,
+      freeroom: function(){
+        return firstHotel.rooms - firstHotel.booked;
+      }
+    };
+    console.log(firstHotel);
+    console.log(firstHotel.freeroom());
+
+
+    // 선생님이 만든거
+
+    var hotel = { //객체를 만드는 축약식 표현
+      name : 'shilla', //속성값
+      rooms : 150,
+      booked : 25,
+      roomTypes:['트윈', '더블', '싱글', '스위트', '강아지방석'], //array 배열
+      roomVancy : function(){
+        var freerooms; //null = 지역변수
+        freerooms = this.rooms - this.booked;
+        return freerooms;
+      }
+    };
+
+    console.log(hotel.roomVancy());
+
+    const elHotel = document.getElementById('hotelRooms');
+    elHotel.innerHTML = firstHotel.name + ' 호텔' + '<br>';
+    elHotel.innerHTML += firstHotel.freeroom() + ' 개의 방이 남아있읍니다.';
+    elHotel.innerHTML += '<br>' + hotel.roomTypes[4] + ' 밖에 업음니다';
+
+  </script>
+</body>
+</html>

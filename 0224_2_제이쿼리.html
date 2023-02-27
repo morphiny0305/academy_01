@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./css/c07_0224.css">
+  <style>
+    .headline{display: none;
+
+    }
+  </style>
+</head>
+<body>
+   <div id="page">
+    <h1 id="header">list</h1>
+    <h2>구입 물품 목록</h2>
+    <ul>
+      <li id="one" class="hot"><em>신선한</em> 무화과</li>
+      <li id="two" class="hot">잣</li>
+      <li id="three" class="hot">꿀</li>
+      <li id="four">우야ㅏ아아앙</li>
+    </ul>
+   </div>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+   <script>
+    $(document).ready(function(){
+      $('ul').html();
+      let lili = $('li').html();
+      console.log(lili);
+      let getText = $('li').text();
+      console.log(getText);
+    }());
+
+    $(function(){
+      // $(":header").addClass('headline');
+      /* $("li:gt(0)").hide().fadeIn(1500); //체이닝기법
+      $("li").on("click", function(){
+        $(this).remove();
+      }); */
+
+      $("li em").addClass('seasonal');
+      $("li.hot").addClass('favorite');
+      // li 중 id 하나를 선택하여, 하이드, 딜레이, 페이드인 체이닝
+      // $("#four").hide().delay(500).fadeIn(1400);
+      // li 중 #one이 아닌거 선택해서 효과주기
+      // $("li:gt(0)").hide().delay(500).fadeIn(1400);
+      // $("li").not(":first").hide().delay(500).fadeIn(1400);
+      $('li[id!="one"]').hide().delay(500).fadeIn(1400);
+    });
+   </script>
+</body>
+</html>

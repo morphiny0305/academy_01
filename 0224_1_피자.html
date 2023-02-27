@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./css/0223_피자_sol-1.css">
+
+</head>
+<body>
+  <div id="container">
+    <h1>피자 주문</h1>
+		<form>
+      <fieldset>
+        <legend>사이즈</legend>
+        <p>Large - 24000 원 </p>
+      </fieldset>
+      <fieldset>
+        <legend>추가 주문 </legend>        
+          <label><input type="checkbox" name="pickle" class="checkbx" value="800">피클(800원)</label>
+          <label><input type="checkbox" name="chilly" class="checkbx" value="300">칠리 소스(300원)</label>
+          <label><input type="checkbox" name="deeping" class="checkbx" value="200">디핑 소스(200원)</label>
+          <label><input type="checkbox" name="stick" class="checkbx" value="4800">치즈스틱(4개, 4800원)</label>
+          <label><input type="checkbox" name="salad" class="checkbx" value="2400">콘 샐러드(2400원)</label>        
+      </fieldset>
+      <fieldset>
+        <legend>합계</legend>
+        <!-- <p id="total"></p> -->
+        <input type="text" id="total" name="total" class="price" readonly>
+      </fieldset>
+		</form>	
+	</div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+  <script>
+    let pizza = 24000;
+    var sideMenu = document.querySelectorAll('.checkbx');
+    let result = document.querySelector('#total');
+    
+    // 내가 누른 사이드 메뉴를 선택하여 그 가격을 피자 값에 더 한다.
+    for(let i = 0; i<sideMenu.length ; i++){
+      /* sideMenu[i].on("click",function(){
+        if(this.checked==true){
+          pizza = pizza + Number(this.value);
+          console.log(pizza);
+        };
+      }); */
+      /* sideMenu[i].onclick = function(){
+        if(this.checked==true){
+          pizza += parseInt(this.value);
+          
+          console.log(pizza);
+        }else{pizza -= parseInt(this.value);
+          console.log(pizza);}
+          result.innerHTML = pizza.toLocaleString() +' 원';
+          result.value = pizza.toLocaleString() + ' 원';
+      }; */
+      sideMenu[i].addEventListener("click", function(){
+        
+        if(this.checked==true){
+          pizza += parseInt(this.value);
+          
+          console.log(pizza);
+        }else{pizza -= parseInt(this.value);
+          console.log(pizza);}
+          result.innerHTML = pizza.toLocaleString() +' 원';
+          result.value = pizza.toLocaleString() + ' 원';
+      });
+      
+    };
+  </script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>쇼핑몰</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+  <style>
+    #test{
+  padding: 10px;
+  width: 80%;
+  margin: auto;
+  background: thistle;
+  border-radius: 20px;
+  display: flex; justify-content: space-around; flex-wrap: wrap;
+  position: relative;
+}
+  </style>
+</head>
+<body>
+
+  <div id="test">
+    <!-- <h6>육돌이</h6>
+    <h5>오돌이</h5>
+    <h4>사돌이</h4>
+    <h3>삼돌이</h3>
+    <h2>이돌이</h2>
+    <h1>일동이</h1> -->
+  </div>
+
+<script>
+  /* let a = document.createElement('p');
+  a.innerHTML = "제가 바로 피태급니다";
+  document.querySelector('#test').appendChild(a); */
+
+  // let aa = "<p>나는 태그이다. 피.</p>";
+  // document.querySelector('#test').insertAdjacentHTML('beforeend', aa);
+
+  // $('#test').prepend(aa);
+  var pants = [ 28, 30, 32, 34];
+  pants.forEach(function(a){
+        // console.log(i);
+        
+
+      });
+
+  
+  let obj = {name: "김멍멍", age: 10};
+  for(var key in obj){
+    console.log(obj[key]);
+  };
+
+
+  pants.forEach((a)=>{
+    $('#test').append(`<option>${a}</option>`);
+  })
+</script>
+</html>

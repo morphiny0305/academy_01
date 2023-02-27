@@ -1,0 +1,102 @@
+@charset "UTF-8";
+@font-face {
+  font-family: 'SBAggroB';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SBAggroB.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  font-family: 'SBAggroB';
+}
+ul,
+li,
+span,
+button,
+img {
+  display: block;
+}
+section{
+  padding: 10px;
+  width: 90%;
+  height: 100%;
+  margin: auto;
+  background: thistle;
+  border-radius: 20px;
+  display: flex; justify-content: space-around; flex-wrap: wrap;
+  position: relative;
+}
+
+h1{width: 90%; height: 80px; line-height: 80px; margin: auto; text-align: center;}
+.object {
+  margin: 30px;
+  width: 20%;
+  height: 35%;
+  box-shadow: 4px 4px 3px #666;
+  padding: 10px;
+  border-radius: 20px;
+  overflow: hidden;
+  background: #fff;
+  
+  position: relative;
+}
+.img-box {
+  width: 100%;
+}
+.img-box img {
+  width: 100%;
+  /* border-radius: 20px; */
+}
+.text-box {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+h2 {
+  width: 100%;
+  padding: 12px;
+  text-align: center;
+  font-size: 2em;
+}
+.text-box ul {
+  width: 90%;
+  padding: 5px 0 30px;
+  line-height: 1.5;
+
+}
+.text-box ul > li {
+  font-size: 0.8em;
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+}
+.text-box ul li span {
+  width: 70%;
+}
+button {
+  width: 100px;
+  height: 30px;border: none;
+  border-radius: 10px;
+  box-shadow:2px 2px 2px #666;
+}
+
+.open-btn{position: absolute; bottom: 0; right: 0;left: 0;margin: auto; margin-bottom: 5px;}
+
+.more-btn{position: absolute; bottom: 0;}
+
+#test{
+  padding: 10px;
+  width: 90%;
+  height: 100%;
+  margin: auto;
+  background: thistle;
+  border-radius: 20px;
+  display: flex; justify-content: space-around; flex-wrap: wrap;
+  position: relative;
+}

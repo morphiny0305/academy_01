@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>0209_2</title>
+  <link rel="stylesheet" href="./css/야옹호텔-2.css">
+  
+</head>
+<body>
+  <section>
+    <div id="logo-btn"></div>
+    <div class="text-box">
+      <div class="title">0209_2</div>
+      <hr>
+      <div class="messages" id="message">3 - 6 - 9</div>
+      <hr>
+      <span class="messages test1">숫자</span>
+      <input type="text" id="point1">
+      <br>
+      <button id="show">해줘</button>
+      <div class="messages" id="result"></div>
+    </div>
+    
+  </section>
+  <script>
+    // 369게임 - 3의 배수(%)에서 박수
+    let result = document.getElementById('result');
+
+    
+    let elClick = document.getElementById('show');
+
+    elClick.addEventListener('click', function(){
+      let number = document.getElementById('point1').value;
+      n=number;
+      elGame(n)
+    });
+
+    function elGame(n){
+      
+      console.log(n);
+      if (n % 9 == 0){result.innerHTML='박수XXX2';}
+      else if(n % 3 == 0){result.innerHTML='박수';}
+      else{result.innerHTML='통과';}
+    };
+
+    elGame(21);
+  </script>
+
+</body>
+</html>

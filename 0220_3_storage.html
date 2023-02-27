@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    localStorage.setItem("이름", "김멍멍");
+      localStorage.getItem("이름");
+      localStorage.removeItem("이름");
+      let arr = [1, 2, 3, 4];
+      var newArray = JSON.stringify(arr); // 어레이 , 오브젝트 ==> json 형태로 바꿈
+      localStorage.setItem('newnum', newArray);
+      var getOut = localStorage.getItem('newnum'); 
+      JSON.parse(getOut);// json ==> 어레이 , 오브젝트 JSON.parse()
+      console.log(JSON.parse(getOut));
+      console.log(JSON.parse(getOut)[2]);
+  </script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>어 무슨 퀴즈</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+  <style>
+    *{box-sizing: border-box; margin: 0; padding: 0;}
+    h2{padding-top: 100px;}
+    .wrap{
+      width: 600px; height: 2000px; padding: 10px; border: 5px solid #666;
+      background: #ccc; margin: auto; margin: 100px;
+      
+    }
+    .nav-bar{width: 100%; line-height: 60px; text-align: center; height: 60px; position: fixed; z-index: 500000; background: paleturquoise;transition: all 0.5s;}
+    .nav-bar2{width: 100%; line-height: 60px; text-align: center; height: 60px; position: fixed;top: 60px; z-index: 500000; background: yellowgreen;transition: all 0.5s;}
+    
+  </style>
+</head>
+<body>
+  <div class="nav-bar">이것은 나브바</div>
+  <div class="nav-bar2">이것은 나브바2</div>
+  <h2></h2>
+  <section class="wrap">
+    <button class="btn">궁금하지 눌러보샘</button>
+  </section>
+
+  <script>
+    $(document).ready(function(){
+      $(window).scroll(function(){
+        if($(this).scrollTop() > 60){
+          $(".nav-bar").css({"position":"fixed", "top":"-60px"})
+          $(".nav-bar2").css({"position":"fixed", "top":"0px"})
+        }else{
+          $(".nav-bar").css({"position":"fixed", "top":"0px"})
+          $(".nav-bar2").css({"position":"fixed", "top":"60px"})
+        };
+        var 높이 = $(window).scrollTop();
+        // console.log(높이);
+        $('.nav-bar2').text(`스크롤이 내려온 길이는 ${parseInt(높이)} 입니다.`);
+        /* if($(this).scrollTop() > 600){
+          window.open('http://127.0.0.1:5501/0221_05_2page.html', '네이버팝업', 'width=800, height=900, scrollbars=yes')
+        }; */
+      });
+      $(".btn").on("click", openBtn);
+  function openBtn(){
+    window.open('http://127.0.0.1:5501/0221_05_2page.html', '_blank', 'width=800, height=900');
+    
+        };
+    });
+    // window.onload = openPopup();
+
+    function openPopup(){
+      var newWin = window.open('0221_05_2page.html', "width=500, height=500");
+      if(newWin == null){
+        alert('파법..띠우고십어...차단해재좀/....')
+      };
+    };
+  </script>
+</body>
+</html>

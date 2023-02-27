@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>쇼핑몰</title>
+  <link rel="stylesheet" href="./css/0216_쇼핑몰.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+</head>
+
+<body>
+  <h1>자 바 스 크 립 트 활 용 레 이 아 웃 만 들 기</h1>
+  <button class="more-btn">MOREEEEEE</button>
+    <button class="again-btn">More2222222</button>
+    <button class="sort">다나가 순 </button>
+    <button class="price">가격 순 </button>
+  <section class="wrap">
+    <!-- <div class="object">
+      <div class="img-box"><img src="./images/icon/icon1.png" alt=""></div>
+      <div class="text-box">
+        <h2 class="title" id="title">김멍멍</h2>
+        <ul>
+          <li>등록 : <span id="text1">02. 16.</span></li>
+          <li>도네 : <span id="text2">귀여움 x 100</span></li>
+        </ul>
+      </div>
+      <button class="open-btn">누르고십지</button>
+    </div> -->
+    
+    
+  </section>
+
+  <script>
+    // 데이터바인딩
+    let products = [
+      { id: 0, price: 500, title: '김깜찍' },
+      { id: 1, price: 700, title: '하앙큼' },
+      { id: 2, price: 800, title: '최상큼' },
+      { id: 3, price: 200, title: '이롱롱' },
+    ]; //서버에서 이런 형식으로 데이터를 제공함 <-이라고 가정
+    $(".sort").on("click", function(){
+      products.sort(function(a, b){if(a.title > b.title){
+        return 1;
+      }else{
+        return -1;
+      };
+
+    });
+      // console.log(products);
+    });
+    
+    // 가격순 정렬
+    $(".price").on("click", function(){
+      products.sort(function(a, b){
+      return a.price - b.price;
+    });
+      $('.wrap').html(''); // 상품을 새로 배열하기위해 문서를 비움
+      products.forEach(function(a, i){
+      let box = `<div class="object">
+      <div class="img-box"><img src="./images/icon/icon3.png" alt=""></div>
+      <div class="text-box">
+        <h2 class="title" id="title">${products[i].title}</h2>
+        <ul>
+          <li>등록 : <span id="text1">02. 16.</span></li>
+          <li>도네 : <span id="text2">${products[i].price}</span></li>
+        </ul>
+      </div>
+      <button class="open-btn">누르고십지</button>
+    </div>`;
+    $('.wrap').append(box);
+    });
+    });
+      // console.log(products);    
+
+    products.forEach(function(a, i){
+      let box = `<div class="object">
+      <div class="img-box"><img src="./images/icon/icon6.png" alt=""></div>
+      <div class="text-box">
+        <h2 class="title" id="title">${products[i].title}</h2>
+        <ul>
+          <li>등록 : <span id="text1">02. 16.</span></li>
+          <li>도네 : <span id="text2">${products[i].price}</span></li>
+        </ul>
+      </div>
+      <button class="open-btn">누르고십지</button>
+    </div>`;
+    $('.wrap').append(box);
+    });
+  </script>
+
+  <script>
+    // more 버튼
+    $('.more-btn').on("click", function(){
+      $.get('https://codingapple1.github.io/js/more1.json')
+      .done((data)=>{
+        // console.log(data);
+        data.forEach((a, i)=>{
+          let box = `<div class="object">
+      <div class="img-box"><img src="http://via.placeholder.com/600" alt=""></div>
+      <div class="text-box">
+        <h2 class="title" id="title">${data[i].title}</h2>
+        <ul>
+          <li>등록 : <span id="text1">02. 16.</span></li>
+          <li>도네 : <span id="text2">${data[i].price}</span></li>
+        </ul>
+      </div>
+      <button class="open-btn">누르고십지</button>
+    </div>`;
+    $('.wrap').append(box);
+        });
+      });
+    });
+
+    $('.again-btn').on("click", function(){
+      $.get('https://codingapple1.github.io/js/more2.json')
+      .done((data)=>{
+        // console.log(data);
+        data.forEach((a, i)=>{
+          let box = `<div class="object">
+      <div class="img-box"><img src="http://via.placeholder.com/600" alt=""></div>
+      <div class="text-box">
+        <h2 class="title" id="title">${data[i].title}</h2>
+        <ul>
+          <li>등록 : <span id="text1">02. 16.</span></li>
+          <li>도네 : <span id="text2">${data[i].price}</span></li>
+        </ul>
+      </div>
+      <button class="open-btn">누르고십지</button>
+    </div>`;
+    $('.wrap').append(box);
+        });
+      });
+    });
+    </script>
+
+
+<script>
+  let array = [4, 8, 5, 2, 40];
+  array.sort(function(a, b){
+    return b-a; // 리턴 값의 오른쪽이 양수 => 오른쪽 a
+                // 오른쪽이 음수면 => 오른쪽 b
+  });
+  console.log(array);
+
+  let stringArray = ['김멍멍', '나비', '다람쥐']
+  stringArray.sort(function(a, b){
+    if(a < b){ // a < b ==> 우측에 양수
+      return 1;
+    }else{
+      return -1;
+    }
+  });
+  console.log(stringArray);
+</script>
+</body>
+
+</html>

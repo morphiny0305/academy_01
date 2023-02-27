@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>이매ㅣ일</title>
+  <link rel="stylesheet" href="./css/c06_0222_폼이벤트.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <style>
+    input[type='email'],
+    input[type='password'],
+    textarea {
+      background-color: #999;
+      color: #666;
+      font-size: 20px;
+      width: 45%;
+      padding: 4px 6px;
+      border: 1px solid #999;
+      border-radius: 8px;
+    }
+
+  </style>
+</head>
+
+<body>
+  <div id="page">
+    <h1>List King</h1>
+    <form method="post" action="http://www.example.org/register" id="formSignup">
+      <h2>멤버십</h2>
+      <label for="email">ㅇㅣㅔ메일</label>
+      <input type="email" class="form-control" id="email" placeholder="Enteremail" name="email" />
+      <label for="password">비번</label>
+      <input type="password" class="form-control" id="pw" placeholder="Enterpassword" name="password" />
+      <label class="form-check-label">
+        <input type="checkbox" class="form-check-input" name="remember" /> 첵
+      </label>
+      <button type="submit" class="btn">꾸욱</button>
+    </form>
+  </div>
+  <script>
+    $(function () {
+      // 폼에서 서브밋 버튼을 누르면
+      $('form').on('submit', function(e){
+        var email = document.querySelector('#email').value;
+        var exptext = /^[A-Za-z0-9_\.\-]+@[A-Za-z0-9\-]+\.[A-Za-z0-9\-]+/;
+
+        if(exptext.test(email) == false){
+          alert('끼애애ㅐㅇ맴앵ㅎ앰ㅎㅁ앵행ㅎ냄ㄴㄹㅇ');
+          e.preventDefault();
+        }
+        // 빔일
+        var pwText = document.querySelector('#pw').value;
+        if(/[A-Z]/.test(pwText) == false){
+          alert('킵고잉 데.문.자.');
+          e.preventDefault();
+
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>

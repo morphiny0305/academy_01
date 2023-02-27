@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>쇼핑몰</title>
+    <link rel="stylesheet" href="./css/0217_쇼핑몰.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  </head>
+
+  <body>
+    <h1>자 바 스 크 립 트 활 용 레 이 아 웃 만 들 기</h1>
+    <section class="wrap">
+      <div class="object">
+        <div class="img-box"><img src="./images/icon/icon4.png" alt="1" /></div>
+        <div class="text-box">
+          <h2 class="title" id="title">김멍멍</h2>
+          <ul>
+            <li class="list_name">등록 :</li>
+            <li class="list_text text1">오늘</li>
+            <li class="list_name">원가 :</li>
+            <li class="list_text text2">1000원</li>
+            <li class="list_name">할인가 :</li>
+            <li class="list_text text3">200원</li>
+            <li class="some-text">20000원 이상 구매시 300원 추가할인</li>
+          </ul>
+        </div>
+        <div class="count">
+          <a href="#" class="minus"
+            ><img src="./images/common/minus.png" alt="0"
+          /></a>
+          <span id="result">1</span>
+          <a href="#" class="plus"
+            ><img src="./images/common/plus.png" alt="0"
+          /></a>
+        </div>
+        <div class="total">
+          total: 
+          <p class="all_total"></p>
+          구매 금액: 
+          <p class="cost">0</p>
+        </div>
+      </div>
+    </section>
+
+
+    <script>
+      let proNum = 0;
+      $('.plus').on("click", numAddcount); // 수량 / 가격 올림
+      $('.minus').on("click", numMinuscount); // 수량 / 가격 내림
+
+      function numAddcount(plusCount){
+        if(plusCount){
+          if(proNum==6)return
+          proNum++;
+          $('#result').text(proNum);
+          let total = proNum*200;
+          let showTotal = total.toLocaleString(); // 숫자 세자리 단위
+          $('.cost').text(showTotal);
+          if(proNum==6){
+            alert('6개를 넘는다면 주금뿐..');
+          };
+        };
+      };
+      function numMinuscount(minusCount){
+        if(minusCount){
+          if(proNum == 0)return
+          proNum --;
+          $('#result').text(proNum);
+          let total = (proNum*200);
+          let showTotal = total.toLocaleString(); // 숫자 세자리 단위
+          $('.cost').text(showTotal);
+        };
+      };
+    </script>
+  </body>
+</html>

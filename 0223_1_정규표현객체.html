@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>정규표현객체</title>
+  <link rel="stylesheet" href="./css/c06_0222_폼이벤트.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <style>
+    input[type='email'],
+    input[type='password'],
+    textarea {
+      background-color: #999;
+      color: #666;
+      font-size: 20px;
+      width: 45%;
+      padding: 4px 6px;
+      border: 1px solid #999;
+      border-radius: 8px;
+    }
+
+  </style>
+</head>
+
+<body>
+  <div id="page">
+    <h1>List King</h1>
+    <form method="post" action="http://www.example.org/register" id="formSignup">
+      <h2>멤버십</h2>
+      <label for="email">ㅇㅣㅔ메일</label>
+      <input type="email" class="form-control" id="email" placeholder="Enteremail" name="email" />
+      <label for="password">패스워드</label>
+      <input type="password" class="form-control" id="pw" placeholder="Enterpassword" name="password" />
+      <label class="form-check-label">
+        <input type="checkbox" class="form-check-input" name="remember" /> 첵
+      </label>
+      <button type="submit" class="btn">꾸욱</button>
+    </form>
+  </div>
+  <script>
+    $(function () {
+      /abc/.test("abcdef");
+      /a/.test("qwert");
+      /[a-d]/.test("abcdef");
+      /[가-다]/.test("다다다다");
+      /[a-zA-Z]/.test("방가a");
+      /[ㄱ-ㅎ가-힣ㅏ-ㅣ]/.test("방가a");
+      /\S/.test("abcdef");
+      /^a/.test("abcdef"); //a로 시작하는 글자가 있나요.
+      /e$/.test("abcdef"); //e로 끄읕나는 글자가 있나요.
+      /(e|z)/.test("abcdef"); // | = or 두 기호 중 하나만 있으면 만족.
+      /a+/.test("abcdef"); // 반복해서 쭉 찾아주세요.
+      /\S+t/.test("abcdef"); //모든 문자 다음에 t가 있나요.
+
+      // 이메일 정규식 표현
+      /\S+@\S+\.\S+/ // \.는 문자 마침묘 문법 아니고 지짜 마침표를 차자주라는 의미
+
+    });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>어 2page 광고창</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+  <style>
+    *{box-sizing: border-box; margin: 0; padding: 0;}
+    .wrap{
+      width: 600px; padding: 10px; border: 5px solid #666;
+       margin: auto; margin: 50px; display: flex; flex-direction: column; flex-wrap: wrap; align-items: center;justify-content: center;
+      
+    }
+    @font-face {
+    font-family: 'RixMomsBlanketR';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/RixMomsBlanketR.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+    button{margin-top: 20px;}
+    .displayTime{font-family: 'RixMomsBlanketR'; font-size: 2em; margin-top: 10px; }
+  </style>
+</head>
+<body>
+  <section class="wrap">
+    <img src="./images/icon/icon5.png" alt="icon">
+    <div class="displayTime">시계는 똑딱딱</div>
+    <button class="stop-btn">멈.처.라</button>
+    <button class="re-btn">다시다다싯</button>
+    <button class="btn">닫ㄷㄷㄷ</button>
+  </section>
+<script>
+  
+  let myTime =setInterval(displayTime, 1000);
+  function displayTime(){
+    let theTime = new Date().toLocaleString();
+    var display = document.querySelector('.displayTime');
+    display.innerHTML = theTime;
+  };
+
+  $(".btn").on("click", closeBtn);
+  function closeBtn(){
+    window.close();
+        };
+
+    $(".stop-btn").on("click", stopTime);
+    function stopTime(){
+      clearInterval(myTime);
+    };
+    $(".re-btn").on("click", reTime);
+    function reTime(){
+      setInterval(myTime);
+    };
+</script>
+</body>
+</html>

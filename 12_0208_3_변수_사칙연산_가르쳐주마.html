@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>0208_3</title>
+  <link rel="stylesheet" href="./css/야옹호텔.css">
+  
+</head>
+<body>
+  <section>
+    <div id="logo-btn"></div>
+    <div class="text-box">
+      <div class="title">야 옹</div>
+      <hr>
+      <div class="messages" id="message">내용</div>
+      <hr>
+      <span class="messages cat_title">이름</span>
+      <hr>
+      <span class="messages cat_price">얌얌</span>
+    </div>
+    
+  </section>
+  <script>
+    // 나이 = 재할당 가능한 변수. 아이디를 뭔 의미로 둔지 모르겠는데 본인이쓰신거.
+    // 출신지 = 그냥 변수.
+    let age = 100000000;
+    var name = '김야옹';
+    var id = 0;
+    const birthPlace = '지구별';
+
+    function showName(){
+      var name = '박야옹';
+      var id = 1;
+      console.log(name);
+    };
+
+    showName();
+    console.log(id);
+  </script>
+
+  <script>
+    // 이자율 계산하기
+    /* Quiz.
+    첫 예금액 = 5만원 미만 = 이율 15% = *1.15
+    첫 예금액 = 5만원 이상 = 이율 20% = *1.2
+
+    Quiz.1) 변수 선언하고 예금액
+    Quiz.2) 2년 정도 적금 후 예금액을 출력
+    */
+    let saveMoney = 15000;
+    let afterMoney;
+    // console.log(afterMoney);
+
+    if (saveMoney >= 50000){ //true  또는 false 
+      afterMoney = saveMoney * 1.20 * 1.20;
+    }else{afterMoney = saveMoney * 1.15 *1.15;}
+    console.log(afterMoney);
+  </script>
+
+
+<script>
+    const elMemo = document.getElementById('message');
+
+  // 비교연산자
+  let a = 3, b = 7, c = 7;
+  let isAlive =false; //플래그 기법
+      isAlive = !isAlive //not 연산자
+
+  /* Quiz.커피 리필이 가능한 가게 - 하루에 최대한 마실 수 있는 양은?
+  내가 마신 커피의 2/3를 두 번 리필
+  360 + (360 * 2/3) + ((360 * 2/3) * 2/3) === ? */
+
+  let coffee = parseInt(prompt('얌얌커피?', '360'));
+  let refill = 0;
+  refill = coffee + coffee * 2 / 3 + 360 * 2 / 3 * 2 / 3; 
+  // let cups = 360 + (360 * 2/3) + ((360 * 2/3) * 2/3);
+
+  console.log(refill.toFixed());
+
+
+</script>
+
+</body>
+</html>

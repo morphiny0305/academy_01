@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./css/0215_quiz.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+</head>
+
+<body>
+  <section class="firstPage">
+    <article class="left-box">
+      <div class="big">
+        <img src="./images/slide/slide_3.png" alt="pic1" id="myPic" class="myPic">
+      </div>
+      <ul class="smalls">
+        <li class="small_1"><img src="./images/newSlide/slide_1.png" alt="pic2" class="smallPics" id="small1"></li>
+        <li class="small_2"><img src="./images/newSlide/slide_2.png" alt="pic2" class="smallPics" id="small2"></li>
+        <li class="small_3"><img src="./images/newSlide/slide_3.png" alt="pic2" class="smallPics" id="small3"></li>
+      </ul>
+    </article>
+    <article class="right-box">
+      <h1>Where does it come from?</h1>
+      <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin
+        literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney
+        College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and
+        going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum
+        comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by
+        Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance.
+        The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</p>
+      <button id="open-btn">OPENNNNNNN</button>
+    </article>
+  </section>
+  <section class="subPage">
+    <h2>Where can I get some</h2>
+    <div class="text-box">
+      <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in
+        some form, by injected humour, or randomised words which don't look even slightly believable. If you are going
+        to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of
+        text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this
+        the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful
+        of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is
+        therefore always free from repetition, injected humour, or non-characteristic words etc.</p>
+      <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in
+        some form, by injected humour, or randomised words which don't look even slightly believable. If you are going
+        to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of
+        text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this
+        the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful
+        of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is
+        therefore always free from repetition, injected humour, or non-characteristic words etc.</p>
+    </div>
+    <button id="close-btn">closeeeeee</button>
+  </section>
+
+
+  <script>
+    let Pic = document.querySelector('.myPic');
+    let small1 = document.querySelector('#small1');
+    let small2 = document.querySelector('#small2');
+    let small3 = document.querySelector('#small3');
+    // 작은 사진 클릭 > 큰사진으로
+    $(function(){
+      $(".myPic").on({
+        /* mouseenter: function(){
+          Pic.src="./images/newSlide/slide_2.png";
+        },
+        mouseout: function(){
+          Pic.src="./images/newSlide/slide_1.png";
+        }, */
+        click: function(){
+          Pic.src="./images/slide/slide_3.png";
+        }
+      })
+    }());// 함수(){}() <즉시 실행하라는 것
+
+    $(function(){
+      $("#small1").on({
+        mouseenter: function(){
+          Pic.src="./images/newSlide/slide_1.png";
+        },
+        /* mouseout: function(){
+          Pic.src="./images/slide/slide_1.png";
+        } */
+      })
+    }());
+    $(function(){
+      $("#small2").on({
+        mouseenter: function(){
+          Pic.src="./images/newSlide/slide_2.png";
+        },
+        /* mouseout: function(){
+          Pic.src="./images/slide/slide_1.png";
+        } */
+      })
+    }());
+    $(function(){
+      $("#small3").on({
+        mouseenter: function(){
+          Pic.src="./images/newSlide/slide_3.png";
+        },
+        /* mouseout: function(){
+          Pic.src="./images/slide/slide_1.png";
+        } */
+      })
+    }());
+  </script>
+
+  <script>
+    // 큰사진 효과주기
+    $(".big").on("mouseover", function () {
+      $('.big img').css("transform", "scale(1.1)");
+    });
+    $(".big").on("mouseout", function () {
+      $('.big img').css("transform", "scale(1)");
+    });
+
+
+    // 오픈버튼 > 서브탭 보이기
+    $(document).ready(function () {
+      $('#open-btn').on("click", function () {
+        $('.subPage').addClass('show');
+      })
+    });
+    // 클로즈버튼 > 서브탭 사라지기
+    $(document).ready(function () {
+      $('#close-btn').on("click", function () {
+        $('.subPage').removeClass('show');
+      })
+    });
+
+  </script>
+</body>
+
+</html>

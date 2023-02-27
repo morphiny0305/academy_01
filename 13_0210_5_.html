@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>탭메뉴 for-loop</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="./css/0209_navbar.css">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+  <style>
+    .form-hide{display: none;}
+  </style>
+</head>
+
+<body>
+<div class="card-group container">
+  <div class="card">
+    <img src="https://via.placeholder.com/600" alt="">
+    <div class="card-body">
+      <h5>card title</h5>
+      <p>가격 : 70000</p>
+      <button class="btn btn-danger">주문하기</button>
+    </div>
+  </div>
+  <div class="card">
+    <img src="https://via.placeholder.com/600" alt="">
+    <div class="card-body">
+      <h5>card title</h5>
+      <p>가격 : 10000</p>
+      <button class="btn btn-danger">주문하기</button>
+    </div>
+  </div>
+  <div class="card">
+    <img src="https://via.placeholder.com/600" alt="">
+    <div class="card-body">
+      <h5>card title</h5>
+      <p>가격 : 50000</p>
+      <button class="btn btn-danger">주문하기</button>
+    </div>
+  </div>
+</div>
+<form class="container my-5 form-group">
+  <p>상품 선택</p>
+  <select class="form-select mt-2">
+    <option>디저트</option>
+    <option>음료</option>
+    <option>바지</option>
+  </select>
+  <select class="form-select mt-2 form-hide">
+    <option>medium</option>
+    <option>large</option>
+  </select>
+</form>
+<div id="test">
+
+</div>
+
+<script>
+  let newP = document.createElement('p');
+  newP.innerHTML = '새로 만든 태그';
+
+  document.querySelector('#test').appendChild(newP);
+</script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <script>
+    let products = [
+      {id: 0, price: 4500, title: '레몬에이드'},
+      {id: 1, price: 6500, title: '바닐라라떼'},
+      {id: 2, price: 7500, title: '아인슈페너'}
+    ];
+    // console.log(products[0].title);
+    
+    let elTitle = document.querySelectorAll('.card-body h5');
+    let elPrice = document.querySelectorAll('.card-body p');
+
+    elTitle[0].innerHTML = products[0].title; // 상품제목
+    elPrice[0].innerHTML ='가격 : ' + products[0].price; // 가격
+    elTitle[1].innerHTML = products[1].title; // 상품제목
+    elPrice[1].innerHTML ='가격 : ' + products[1].price; // 가격
+    /* document.querySelectorAll('.card-body h5')[2].innerHTML = products[2].title; // 상품제목
+    document.querySelectorAll('.card-body p')[2].innerHTML ='가격 : ' + products[2].price; // 가격 */
+    elTitle[2].innerHTML =`${products[0].title}`;
+    elPrice[2].innerHTML =`가격 : ${products[0].price}`;
+  </script>
+
+  <script>
+    // 유저 > 선택 '음료' > form 의 .form-hide를 removeClass > 보이게하기
+    var pants = [ 28, 30, 32, 34];
+    $('.form-select').eq(0).on('input', function(e){
+      var value = e.currentTarget.value;
+      // var value = $('.form-select').eq(0).val();
+      console.log(value);
+    if(value == '음료'){
+      $('.form-select').eq(1).removeClass('form-hide');
+    }else if(value == '바지'){
+      $('.form-select').eq(1).removeClass('form-hide');
+      $('.form-select').eq(1).html(''); // 선택한 것을 비우는 것
+      // 쉬운거
+      pants.forEach(function(a){
+        // console.log(a);
+        $('.form-select').eq(1).append(`<option>${a}</option>`);
+
+      })
+    }
+    });
+
+
+    
+  </script>
+</body>
+
+</html>

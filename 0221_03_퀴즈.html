@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>어 무슨 퀴즈</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+  <style>
+    *{box-sizing: border-box; margin: 0; padding: 0;}
+    h2{padding-top: 100px;}
+    .wrap{
+      width: 600px; height: 600px; border: 5px solid #666;
+      background: #ccc; margin: auto; margin: 100px;
+      
+    }
+    div.box{
+      width: 100px; height: 100px; border: 5px solid #666;
+      background: teal; margin: 50px;
+    }
+  </style>
+</head>
+<body>
+  <h2></h2>
+  <section class="wrap">
+    <h1 style="display: none;">엄빠</h1>
+    <div class="box">칭구</div>
+  </section>
+
+  <script>
+    var parents = $('.wrap').offset().top;
+    var parents2 = $('.wrap').position().top;
+    // console.log(parents);
+    let child1 = $('.box').position().top;
+    let child2 = $('.box').offset().top
+    // console.log(child1);
+    document.querySelector('h2').innerHTML=`부모박스 offset().top = ${parents} <br> 부모박스 position().top = ${parents2} <br> 자식박스 offset().top = ${child1} <br>자식박스 position().top = ${child2}`;
+  </script>
+
+
+</body>
+</html>

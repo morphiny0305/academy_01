@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <title>0213_4_카운트다운</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="./css/0209_navbar.css">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</head>
+
+<body>
+  <div class="alert alert-danger">
+    <span id="num">5</span> 초 남았다. 너의 목숨.
+  </div>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <script>
+    // setTimeout(function(){실행코드}, 기다릴 시간);
+    /* setTimeout(function () {
+      // console.log('2초')
+      $('.alert').hide(); // hide() => display = none;
+    }, 5000);
+ */
+    // setTimeout(얌얌, 1000);
+    // function 얌얌() {
+    //   console.log('애플 크럼블 파이..큭큭');
+    // }
+
+    // 1초마다 글자 출력하기
+    /* setInterval(function(){
+      console.log('크크큭...');
+    }, 1000); */
+
+
+    let box = document.getElementById('num');
+    
+      let count = 5;
+    setInterval(countNum, 1000);
+
+    function countNum(){
+      count = count - 1;
+      if(count >= 0){ 
+        box.innerHTML = count;
+        console.log(count);
+    };
+    if(count == 0){ document.querySelector(".alert").style.display='none';
+    };
+  };
+
+    
+
+  </script>
+
+
+</body>
+
+</html>

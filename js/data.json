@@ -1,0 +1,31 @@
+showDress({
+  "items" :[
+  {"id" : 9, "price" : 900, "title" : "yumyum"},
+  {"id" : 10, "price" : 800, "title" : "hahaha"},
+  {"id" : 11, "price" : 700, "title" : "ummmmm"}
+]
+});
+
+let products = [
+  { id: 0, price: '$ 100', title: '깜찍이' },
+  { id: 1, price: '$ 200', title: '앙큼이' },
+  { id: 2, price: '$ 300', title: '상큼이' },
+  { id: 3, price: '$ 400', title: '롱롱이' },
+];
+
+function showDress(data){
+  products.forEach(function(a, i){
+    let box = `<div class="object">
+    <div class="img-box"><img src="./images/icon/icon6.png" alt=""></div>
+    <div class="text-box">
+      <h2 class="title" id="title">${products[i].title}</h2>
+      <ul>
+        <li>등록 : <span id="text1">02. 16.</span></li>
+        <li>도네 : <span id="text2">${products[i].price}</span></li>
+      </ul>
+    </div>
+    <button class="open-btn">누르고십지</button>
+  </div>`;
+  $('.wrap').append(box);
+  });
+};

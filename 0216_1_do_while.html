@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="result"></div>
+  <script>
+    /* let i = 1;
+    let message;
+    while (i < 10){
+      message += i + ' x 5 = ' + (i * 5) + '<br>';
+      i++
+    };
+    //출력구문
+    document.write(message); */
+
+
+    var i = 1;
+    var message = ' ';
+    do{
+      message += i + ' x 5 = ' + (i*5) + '<br>';
+      i++
+    }while( i < 6);
+    document.querySelector('#result').innerHTML = message;
+  </script>
+</body>
+</html>

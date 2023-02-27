@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>스위치 구문</title>
+  <link rel="stylesheet" href="./css/0215_quiz.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+</head>
+
+<body>
+  <div id="quiz">
+    <h2>물에 빠진</h2>
+    <button>강아지</button>
+    <button>나뭇가지</button>
+    <button>쓰레기통</button>
+  </div>
+    <script>
+    document.querySelector('#quiz').addEventListener("click", function(event){
+      // console.log(event.target.innerHTML);
+
+      switch(event.target.innerHTML){
+        case '강아지':
+          alert('멍멍');
+          break;
+          case '나뭇가지':
+          alert('저를 사랑하시는군요..');
+          break;
+          case '쓰레기통':
+          alert('텅텅');
+          break;
+          default:
+        alert('아니 버튼 누르라고');
+        break;
+      };
+    });
+  </script>
+<script>
+    /* let some = 2 + 5;
+    
+    switch(some){
+      case 3:
+        alert('삼삼');
+        break;
+      case 4:
+        alert('사사사');
+        break;
+
+      default:
+        alert('ㄴㄴㄴㄴㄴ');
+        break;
+    }; */
+  </script>
+
+</body>
+
+</html>
