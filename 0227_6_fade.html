@@ -4,11 +4,10 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>each 함수 특성</title>
+    <title>제이쿼리 fade</title>
     <link rel="stylesheet" href="./css/c07_0224.css" />
     <style>
-      .boxbox{background: teal; color: #fff; font-weight: bold; transition: all ease 1s;}
-      .boxbox:active{transform: rotate( 360deg );}
+      .boxbox{background: teal; color: #fff; font-size: 15px; font-weight: bold; transition: all ease 1s;}
     </style>
   </head>
   <body>
@@ -22,19 +21,24 @@
         <li id="four">우야ㅏ아아앙</li>
       </ul>
     </div>
+    <div id="div1" style="width: 100px; height: 100px; background: crimson;"></div>
+    <div id="div2" style="width: 100px; height: 100px; background: orangered;"></div>
+    <div id="div3" style="width: 100%; height: 100px; background: orange;"></div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <script>
-      // each = 루프의 속성을 가지고 있음.
-      // $(this) 속성을 활용
-      $('li').each(function(){
-        var $id = this.id;
-        // console.log($id);
-        // span 활용 > 클래스 하나 생성 적용 > 아이디 값 출력
-        $(this).append('<span class="box111">  ' + $id + ' </span>');
+    
+    $(function(){
+    // 사자 이미지를 클릭하여 페이드 토글
+    $('#header').on("click", function(){
+      $('#div1').fadeToggle('normal');
+      $('#div2').fadeTo(1000 , 0, function(){
+        alert('뿌애앵')
       });
-      $('li').on("click", function(){
-        $(this).addClass('complete');
-      });
+      $('#div3').slideToggle('normal');
+    });
+    });
+
+    
     </script>
   </body>
 </html>

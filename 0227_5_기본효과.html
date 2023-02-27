@@ -4,11 +4,10 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>each 함수 특성</title>
+    <title>제이쿼리 기본효과</title>
     <link rel="stylesheet" href="./css/c07_0224.css" />
     <style>
-      .boxbox{background: teal; color: #fff; font-weight: bold; transition: all ease 1s;}
-      .boxbox:active{transform: rotate( 360deg );}
+      .boxbox{background: teal; color: #fff; font-size: 15px; font-weight: bold; transition: all ease 1s;}
     </style>
   </head>
   <body>
@@ -22,19 +21,30 @@
         <li id="four">우야ㅏ아아앙</li>
       </ul>
     </div>
+    <div id="div1" style="width: 100px; height: 100px; background: crimson;"></div>
+    <div id="div2" style="width: 100px; height: 100px; background: orangered;"></div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <script>
-      // each = 루프의 속성을 가지고 있음.
-      // $(this) 속성을 활용
-      $('li').each(function(){
-        var $id = this.id;
-        // console.log($id);
-        // span 활용 > 클래스 하나 생성 적용 > 아이디 값 출력
-        $(this).append('<span class="box111">  ' + $id + ' </span>');
-      });
-      $('li').on("click", function(){
-        $(this).addClass('complete');
-      });
+    
+    $(function(){
+/* $('h2').hide().slideDown(5000, function(){
+      alert('뿌애앵');
+    }); */
+
+    $('li').hide().each(function(index){
+      $(this).delay(500*index).fadeIn(500);
+    });
+
+
+    // 각각의 li 클릭 > fadeOut()활용 > 사라지게하기
+    $('li').on('click', function(){
+      $(this).fadeOut();
+    });
+
+    
+    });
+
+    
     </script>
   </body>
 </html>

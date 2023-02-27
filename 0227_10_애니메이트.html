@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>애니메이트</title>
+    <style>
+      p{width: 120px; text-align: center; height: 80px;}
+      .txt1 {background: red;}
+      .txt2 {background: orangered;}
+      .txt3 {background: orange;}
+      .txt4 {background: gold;}
+      .txt5 {background: yellowgreen;}
+    </style>
+  </head>
+  <body>
+    <p class="txt1">효과 1</p>
+    <p class="txt2">효과 2 <br> delay (300)</p>
+    <p><button class="btn1">50px 전진</button></p>
+    <p class="txt3">효과 3</p>
+    <p class="txt4">효과 4 <br> stop ()</p>
+    <div class="div" style="background: thistle; width: 100px; height: 50px;"></div>
+    <p class="txt5">효과 5 <br> stop (true, true)</p>
+    <button class="ani">효과 3, 4, 5 버튼</button>
+    <button class="ani1">stop (true, true)</button>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script>
+      $(document).ready(function(){
+        $('p.txt1').animate({marginLeft:"300px"}, 1000);
+        $('p.txt2').delay(300).animate({marginLeft:"300px"}, 'slow');
+        
+        // 효과 5 - 버튼 눌러서 작동
+        $('.ani').on("click", moveAni);
+        $('.ani1').on("click", moveAni1);
+        function moveAni(){
+          $('p.txt3').animate({marginLeft:"+=50px"}, 'slow');
+
+          $('p.txt4').animate({opacity:0.5}, 'slow')
+          .animate({marginLeft:"+=50px"}, 'slow');
+          $('p.txt4').stop();
+
+          $('p.txt5').animate({marginLeft:"+=50px"}, 800);
+          $('p.txt5').stop(true, true);
+        };
+        
+        function moveAni1(){
+          $('.div').animate({marginLeft:"+=50px"}, 'slow').animate({opacity:0.5}, 'slow')
+          ;
+          $('.div').stop(true, true);
+
+        };
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>일반적인메뉴 세로</title>
+    <style>
+      body{background: #888;}
+      * {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        box-sizing: border-box;
+      }
+      a {
+        text-decoration: none;
+        color: #444;
+      }
+      header {
+        width: 150px;
+        height: 100vh;
+        background: #000;
+        text-align: center;
+        
+      }
+      .logo {
+        background: url(./images/paw.png) no-repeat center;
+        background-size: contain;
+        filter: invert(100);
+        width: 100px;
+        height: 100px;
+        float: left;
+        
+      }
+      .menu {
+        float: right; position: relative; z-index: 5;
+        margin-top: 80px;
+      }
+      nav ul.gnb > li {
+        float: left;
+        padding: 10px;
+        width: 150px;
+        background: thistle;
+      }
+      nav ul.gnb > li > a {
+        font-size: 18px;
+        font-weight: bold;
+        width: 100px;
+        text-align: center;
+        /* background: thistle; */
+      }
+
+      /* 2차메뉴 */
+      nav ul.gnb > li > ul.sub {display: none; position: absolute; top: 0; left: 150px; width: 120px;}
+      /* nav ul.gnb > li:hover > ul.sub {display: block;} */
+      nav ul.gnb > li > ul.sub li{padding: 10px;background: rgba(255, 255, 255, 0.7);}
+      nav ul.gnb > li > ul.sub li a{width: 100%;}
+      nav ul.gnb > li > ul.sub li a:hover {text-decoration: underline;}
+    </style>
+  </head>
+  <body>
+    <div>
+      <header>
+        <div class="logo"></div>
+        <nav class="menu">
+          <ul class="gnb">
+            <li>
+              <a href="#">김멍멍월드</a>
+              <ul class="sub">
+                <li><a href="#">김멍멍 - 1</a></li>
+                <li><a href="#">김멍멍 - 2</a></li>
+                <li><a href="#">김멍멍 - 3</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#">박야옹월드</a>
+              <ul class="sub">
+                <li><a href="#">박야옹 - 1</a></li>
+                <li><a href="#">박야옹 - 2</a></li>
+                <li><a href="#">박야옹 - 3</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#">최기린월드</a>
+              <ul class="sub">
+                <li><a href="#">최기린 - 1</a></li>
+                <li><a href="#">최기린 - 2</a></li>
+                <li><a href="#">최기린 - 3</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </header>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script>
+      $(function(){
+        $(".gnb > li").on({
+          mouseover : function(){
+          // alert('ㅠ');
+          $(this).find('.sub').stop().slideDown(300);},
+          mouseout : function(){
+          $(this).find('.sub').stop().slideUp(300);
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

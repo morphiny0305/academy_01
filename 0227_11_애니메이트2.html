@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>애니메이트</title>
+    <style>
+      p{width: 120px; text-align: center; height: 80px;}
+      .txt1 {background: red;}
+      .txt2 {background: orangered;}
+      .txt3 {background: orange;}
+      .txt4 {background: gold;}
+      .txt5 {background: yellowgreen;}
+    </style>
+  </head>
+  <body>
+    <button class="btn">버어튼</button>
+    <p class="txt1">박스</p>
+    <!-- <p class="txt2">효과 2 <br> delay (300)</p> -->
+    <!-- <p class="txt3">효과 3</p> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script>
+      $(document).ready(function(){
+        $('.btn').on("click", clickAnime);
+        function clickAnime(){
+          $('p.txt1').animate({marginLeft:"200px"}, 'slow')
+            .animate({marginTop:"200px"}, 'slow')
+            .queue(function(){
+              // 박스에 css 컬러 변화, 
+              $(this).css("background", 'gold');
+              $(this).dequeue(); // 뒤따라오는 애니메이션 지속
+            })
+            .animate({marginLeft:"0px"}, 'slow')
+            .animate({marginTop:"0px"}, 'slow');
+        };
+      });
+    </script>
+  </body>
+</html>

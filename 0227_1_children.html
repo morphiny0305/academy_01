@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>each 함수 특성</title>
+    <title>children</title>
     <link rel="stylesheet" href="./css/c07_0224.css" />
     <style>
       .boxbox{background: teal; color: #fff; font-weight: bold; transition: all ease 1s;}
@@ -24,17 +24,21 @@
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <script>
-      // each = 루프의 속성을 가지고 있음.
-      // $(this) 속성을 활용
-      $('li').each(function(){
-        var $id = this.id;
-        // console.log($id);
-        // span 활용 > 클래스 하나 생성 적용 > 아이디 값 출력
-        $(this).append('<span class="box111">  ' + $id + ' </span>');
+      let showId = ' '; // id null값으로 선언
+        let $listItems = $('li');
+      //이 이벤트가 들어가면 해당되는 아이디를 append로 출력
+      //mouse out > 해당되는 아이디를 remove
+      $listItems.on({
+        mouseover: function(){
+          var $id = this.id;
+          $(this).append('<span class="boxbox">  ' + $id + ' </span>');
+            },
+        mouseout: function(){
+              $(this).children('span').remove();
+            }
       });
-      $('li').on("click", function(){
-        $(this).addClass('complete');
-      });
+
+      
     </script>
   </body>
 </html>

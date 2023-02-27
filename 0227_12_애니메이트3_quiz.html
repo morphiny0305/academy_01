@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>애니메이트</title>
+    <style>
+      p {
+        width: 30px;
+        text-align: center;
+        height: 30px;
+        font-size: 10px;
+      }
+      .wrap {
+        background: tan;
+        width: 400px;
+        padding: 5px;
+        overflow: hidden;
+      }
+      .txt1 {
+        background: teal;
+      }
+    </style>
+  </head>
+  <body>
+    <button class="btn back">돌아왕..</button>
+    <button class="btn go">ㄱㄱ</button>
+    <div class="wrap">
+      <p class="txt1">간다</p>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $(".btn").on("click", clickAnime);
+        let count = 0;
+        function clickAnime() {
+          count ++;
+          if (count < 10) {if ($(this).hasClass("go") === true) {
+            $(".txt1").animate({ marginLeft: "+=10%" }, "slow");
+          } 
+          };} /*else {alert('멈췅...')}*/
+          if(count < 10) {else if (!$(this).hasClass("go") === true) {
+            $(".txt1").animate({ marginLeft: "-=10%" }, "slow");}
+          
+        }
+      });
+    </script>
+  </body>
+</html>

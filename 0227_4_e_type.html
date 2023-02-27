@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>제이쿼리 e_type</title>
+    <link rel="stylesheet" href="./css/c07_0224.css" />
+    <style>
+      .boxbox{background: teal; color: #fff; font-size: 15px; font-weight: bold; transition: all ease 1s;}
+    </style>
+  </head>
+  <body>
+    <div id="page">
+      <h1 id="header">list</h1>
+      <h2>변경하고 수정하기</h2>
+      <ul>
+        <li id="one" class="hot"><em>신선한</em> 무화과</li>
+        <li id="two" class="hot">잣</li>
+        <li id="three" class="hot">꿀</li>
+        <li id="four">우야ㅏ아아앙</li>
+      </ul>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script>
+      let showId = ' '; // id null값으로 선언
+        let $listItems = $('li');
+      //이 이벤트가 들어가면 해당되는 아이디를 append로 출력
+      //mouse out > 해당되는 아이디를 remove
+      $listItems.on({
+        click: function(e){
+          var $id = this.id;
+          var today = new Date();
+          var clicked = today.toDateString();
+          // $(this).append('<span class="boxbox">  ' + $id + ' </span>');
+          // console.log($id + clicked);
+          $(this).append('<span class="boxbox">  ' + clicked +' / '+ e.type + ' </span>');
+            },
+        mouseout: function(){
+              $(this).children('span').remove();
+            }
+      });
+      
+      
+    </script>
+  </body>
+</html>

@@ -4,11 +4,11 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>each 함수 특성</title>
+    <title>제이쿼리 find</title>
     <link rel="stylesheet" href="./css/c07_0224.css" />
     <style>
       .boxbox{background: teal; color: #fff; font-weight: bold; transition: all ease 1s;}
-      .boxbox:active{transform: rotate( 360deg );}
+      .boxbox:active{transform: rotate( 360deg ); }
     </style>
   </head>
   <body>
@@ -18,23 +18,18 @@
       <ul>
         <li id="one" class="hot"><em>신선한</em> 무화과</li>
         <li id="two" class="hot">잣</li>
-        <li id="three" class="hot">꿀</li>
+        <li id="three" class="hot">꿀  <span> 슈판</span></li>
         <li id="four">우야ㅏ아아앙</li>
       </ul>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <script>
-      // each = 루프의 속성을 가지고 있음.
-      // $(this) 속성을 활용
-      $('li').each(function(){
-        var $id = this.id;
-        // console.log($id);
-        // span 활용 > 클래스 하나 생성 적용 > 아이디 값 출력
-        $(this).append('<span class="box111">  ' + $id + ' </span>');
+      // find 함수에는 선택할 셀렉터를 넣어 사용
+      $('ul').find('span').css({
+        "background" : 'skyblue',
+        "border" : '3px solid red'
       });
-      $('li').on("click", function(){
-        $(this).addClass('complete');
-      });
+      
     </script>
   </body>
 </html>

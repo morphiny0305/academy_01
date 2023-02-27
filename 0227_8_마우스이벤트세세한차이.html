@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>마우스이벤트세세한차이</title>
+    <style>
+      section{
+        width: 800px;
+        height: 400px;
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        align-items: center;
+        background: teal;
+      }
+      h2{width: 100%; text-align: center; font-size: 30px;}
+      .event{
+        width: 230px; height: 200px; background: thistle;
+        text-align: center;
+      }
+      strong{font-size: 25px;}
+      span{font-size: 50px; font-weight: bold;}
+    </style>
+      </head>
+  <body>
+    <section>
+      <h2>마우스 이벤트의 세세한 차이</h2>
+      <div class="over event">
+        <strong>마우스 오버 :</strong><br> 마우스 포인터가<br> div 영역과 <br> 그 자식요소에 들어갈 때<br> <span></span>
+      </div>
+      <div class="enter event">
+        <strong>마우스 엔터 :</strong><br> 마우스 포인터가<br> div 영역에 들어갈 때<br> <span></span>
+      </div>
+      <div class="mmove event">
+        <strong>마우스 무브 :</strong><br> 매 이벤트가 촉발될 때<br> <span></span>
+      </div>
+    </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script>
+      $(function(){
+        let boxOver = 0;
+        let boxEnter = 0;
+        let boxMove = 0;
+        $('div.over').mouseover(function(){
+          $('.over > span').text(boxOver += 1);
+        });
+        $('div.enter').on("mouseenter", function(){
+          $('.enter span').text(boxEnter += 1);
+        });
+        $('div.mmove').on("mousemove", function(){
+          $('.mmove span').text(boxMove += 1);
+        });
+      });
+    </script>
+  </body>
+</html>
