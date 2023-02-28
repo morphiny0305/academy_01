@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>문서탐색</title>
+    <link rel="stylesheet" href="./css/c07_0224.css" />
+  </head>
+  <body>
+    <div id="page">
+      <h1 id="header">list</h1>
+      <h2>변경하고 수정하기</h2>
+      <ul>
+        <li id="one" class="hot"><em>신선한</em> 무화과</li>
+        <li id="two" class="hot">잣</li>
+        <li id="three" class="hot">꿀</li>
+        <li id="four">우야ㅏ아아앙</li>
+      </ul>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+    <script>
+      $(document).ready(function () {
+        var $listItem = $("li");
+        // $("li").filter(".hot").eq(2).removeClass('hot');
+        $listItem
+          .filter(".hot:last")
+          .removeClass("hot")
+          .css("color", "crimson");
+        // $("li:not(.hot)").addClass('cool');
+        $listItem.not(".hot").addClass("cool"); //위에꺼랑 같음
+
+        // $("li").has('em').addClass('complete');
+
+        $listItem.each(function () {
+          var $this = $(this);
+          // is함수 사용 > 클래스가 hot인 태그 선택
+          if ($this.is(".hot")) {
+            $this.prepend("으ㅏㅏㅏㅏㅏㅏㅏㅏ");
+          };
+        });
+      });
+    </script>
+  </body>
+</html>

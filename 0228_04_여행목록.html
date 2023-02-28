@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>여행</title>
+    <link rel="stylesheet" href="./css/c07_0224.css" />
+    <style>
+      #addCities{width: 70%;}
+    </style>
+  </head>
+  <body>
+    <div id="page">
+      <h1 id="header">list</h1>
+      <h2>목 적 지</h2>
+      <ul>
+        <li id="one" class="hot"><em>디즈니</em>랜드</li>
+        <li id="two" class="hot">에버랜드</li>
+        <li id="three" class="hot">롯데월드</li>
+        <li id="four">네버랜드</li>
+      </ul>
+      <div id="newItemButton">
+        <button href="#" id="showForm">ㅋ크ㅋㅋ곳</button>
+      </div>
+      <form id="newItemForm">
+        <input type="text" id="addCities" placeholder="얻이..">
+        <input type="submit" id="addButton" value="추가">
+      </form>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+    <script>
+      $(function(){
+        //변수 선언과 할당
+        var $newItemBtn = $('#newItemButton');
+        var $newItemForm = $('#newItemForm');
+        var $textInput = $('input:text');
+        // 버튼을 보이게 하고, 폼을 사라지게 만들기
+        $newItemBtn.show();
+        $newItemForm.hide();
+
+        $newItemBtn.on("click", function(){
+          $newItemBtn.hide();
+          $newItemForm.show();
+        });
+
+        
+        
+        // 폼을 전달하면 도시이름이 전달됨, e.preventDefault() 활용
+        $('form').on('submit', function(e){
+          e.preventDefault();
+          var $destination = $('#addCities');
+          // console.log($destination.value);
+          var newDestination = $destination.val();
+          if(newDestination != ''){$('li:last').after('<li class="cool">' + $destination.val() + "</li>");}else{alert('tlqkf');}
+          
+          $destination.val('');
+          
+          
+        });
+
+      }); //제이쿼리 끝
+    </script>
+  </body>
+</html>

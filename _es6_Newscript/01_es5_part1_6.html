@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>es6_part1_6</title>
+</head>
+<body>
+  <button id="btn1">뿌잉</button>
+  <button id="btn2">뿌잉</button>
+  <button id="btn3">뿌잉</button>
+  <div style="display: none;">뿡뿡1</div>
+  <div style="display: none;">뿡뿡2</div>
+  <div style="display: none;">뿡뿡3</div>
+  <script>
+    var text = 'hell............';
+    /* console.log(text[0]);
+    console.log(text[1]); */
+    console.log(text);
+    console.log(...text);
+    let a = [1, 2, 3, 4];
+    let b = [7, 8, 9, 10];
+    let c = [...a, ...b];
+    let c2 = [...b, ...a];
+    
+    let d = [11, 12, 13];
+    // let e = d;
+    let e = [...d];
+
+
+    var o1 = {a:1, b:2};
+    var o2 = {c:3, ...o1};
+
+
+    function sum(a, b, c){
+      console.log(a+b+c);
+    };
+
+    var arr = [10, 20, 30];
+    sum(...arr);
+  </script>
+</body>
+</html>

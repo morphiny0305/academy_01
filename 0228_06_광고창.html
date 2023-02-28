@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>높이값</title>
+    <link rel="stylesheet" href="./css/c07_0224.css" />
+    <style>
+      .boxbox{height: 1500px;}
+    </style>
+  </head>
+  <body>
+    <div id="page">
+      <h1 id="header">list</h1>
+      <h2>목 적 지</h2>
+      <ul class="boxbox">
+        <li id="one" class="hot"><em>디즈니</em>랜드</li>
+        <li id="two" class="hot">에버랜드</li>
+        <li id="three" class="hot">롯데월드</li>
+        <li id="four">네버랜드</li>
+      </ul>
+    </div>
+    <p id="footer">&copy; 여행가고십당</p>
+    <div id="slideAd">newTour<br>만원이면 간다</div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script>
+      $(function(){
+        var $window = $(window);
+        var $slideAd = $('#slideAd');
+        var $footerOffset = $('#footer').offset().top;
+        console.log($footerOffset + ' px');
+        var $adShow = $footerOffset - $window.height() - 500;
+        console.log($adShow + ' px');
+        $window.on("scroll", function(){
+          
+          if($adShow < $window.scrollTop()){
+            $slideAd.animate({right:0},250)
+          }else{$slideAd.stop(true).animate({right:-250},250)};
+        });
+        
+
+
+      });
+    </script>
+  </body>
+</html>

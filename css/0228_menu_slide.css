@@ -1,0 +1,65 @@
+      @charset "UTF-8";
+      @font-face {
+        font-family: 'WandohopeR';
+        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10@1.0/WandohopeR.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+    }
+      
+      * {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+      a {
+        text-decoration: none;
+        color: #444;
+      }
+      header {
+        width: 600px;
+        height: 115px;
+        background: #000;
+        text-align: center;
+        position: absolute;
+      }
+      .logo {
+        background: url(../images/paw.png) no-repeat center;
+        background-size: contain;
+        filter: invert(100);
+        width: 100px;
+        height: 100%;
+        float: left;
+      }
+      .menu {
+        float: right; position: relative; z-index: 5;
+        margin-top: 80px;
+      }
+      nav ul.gnb > li {
+        float: left;
+      }
+      nav ul.gnb > li > a {
+        font-size: 18px;
+        padding: 10px 30px;
+        font-weight: bold;
+        width: 100px;
+        text-align: center;
+        background: thistle;
+      }
+
+      /* 2차메뉴 */
+      nav ul.gnb > li > ul.sub {display: none;}
+      /* nav ul.gnb > li:hover > ul.sub {display: block;} */
+      nav ul.gnb > li > ul.sub li{padding: 10px;background: rgba(255, 255, 255, 0.7);}
+      nav ul.gnb > li > ul.sub li a{width: 100%;}
+      nav ul.gnb > li > ul.sub li a:hover {text-decoration: underline;}
+
+      
+
+      /* 슬라이드 섹션 */
+      .imgWrapTop{padding-top: 115px; width: 600px; overflow: hidden;
+        font-family: 'WandohopeR';
+      }
+      .imgSlideTop{width: 1800px; }
+      .slide_A{width: 600px;position: relative;float: left;}
+      img.slideIMG{width: 100%;}
+      span.imageText{ width: 190px; font-size: 45px; font-weight: bold; text-align: center; line-height: 50px; left: 70px; height: 50px; position: absolute; top: 0; bottom: 0; margin: auto; color: #fff; }

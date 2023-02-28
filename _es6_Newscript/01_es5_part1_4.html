@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>es6_part1_4</title>
+</head>
+<body>
+  <button id="btn">뿌잉</button>
+  <script>
+  //setTimeout(콜백함수, ms) 활용하기
+  setTimeout(function(){
+    // console.log('ㅠㅠ');
+  }, 2000);
+
+  setTimeout(text1, 1000)
+  function text1(){
+    // console.log('힝 ㅠㅠ');
+  };
+  document.getElementById('btn').addEventListener("click", function(){
+    // console.log(this.innerHTML);
+    setTimeout(()=>{
+      // console.log(this.innerHTML);
+    },900);
+
+    var btn = this;
+    setTimeout(function(){
+      // console.log('2' + btn.innerHTML);
+    }, 2000);
+  });
+
+
+  // 콘솔창에 1초에 1번씩 1~5까지 출력
+  
+    let a = 0;
+    for(let i = 1; i < 6; i ++){
+      a = a + i;
+      setTimeout(function(){console.log(i), i*1000});
+    }
+  
+  
+  
+  </script>
+</body>
+</html>

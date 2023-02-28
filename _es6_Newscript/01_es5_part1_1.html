@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>es6_part1</title>
+</head>
+<body>
+  <button id="btn">뿌잉</button>
+  <script>
+    function someThing(){
+      console.log(this);
+    }
+    someThing();
+
+    let someEl = {
+      names : ["kim", "멍", "댕"],
+      someFunction : function(){
+        someEl.names.forEach(() => {
+          console.log('포잎ㅍ이치 ' + this)
+        });
+        console.log(this); // 여기서 말하는 this = 함수의 주인 = someEl
+      }
+    };
+    let someEl1 = {
+      data:{
+        someFunction : function(){
+          console.log(this);
+        }
+      }
+    };
+    console.log(someEl1.data.someFunction());
+
+    var name = '김멍멍';
+        name = '최멍멍';
+
+
+    let age = 100;
+    // let age = 200; // 재선언 X
+        age = 300; // 재할당 O
+
+    const height = {키 : 10};
+          height.키 = 200; // 재할당
+
+    document.getElementById('btn').addEventListener("click", function(e){
+      // console.log(this); // 여기서의 this = e.currentTarget
+      var arr = [ 1, 2, 3 ];
+      arr.forEach(function(){
+        console.log(this);
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>문서탐색</title>
+    <link rel="stylesheet" href="./css/c07_0224.css" />
+  </head>
+  <body>
+    <div id="page">
+      <h1 id="header">list</h1>
+      <h2>변경하고 수정하기</h2>
+      <ul>
+        <li id="one" class="hot"><em>신선한</em> 무화과</li>
+        <li id="two" class="hot">잣</li>
+        <li id="three" class="hot">꿀</li>
+        <li id="four">우야ㅏ아아앙</li>
+      </ul>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+    <script>
+      $(document).ready(function () {
+        //1. h2 선택
+        //2. ul 없애기
+        //3. h2 > append 활용 > "<a class="show"> 보이기 </a>" 추가
+        //4. h2 클릭하면 .. 까지 만들기
+        var $h2 = $('h2');
+        $h2.append('<a class="show"> 보이기 </a>');
+        $('ul').hide();
+        $h2.on("click", function(){
+          // alert('h2');
+          $h2.next('ul').fadeIn(500).children('.hot').addClass('complete');
+          $h2.find('a').fadeOut();
+        });
+      });
+    </script>
+  </body>
+</html>

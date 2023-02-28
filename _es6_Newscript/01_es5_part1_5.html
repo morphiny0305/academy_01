@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>es6_part1_5</title>
+</head>
+<body>
+  <button id="btn1">뿌잉</button>
+  <button id="btn2">뿌잉</button>
+  <button id="btn3">뿌잉</button>
+  <div style="display: none;">뿡뿡1</div>
+  <div style="display: none;">뿡뿡2</div>
+  <div style="display: none;">뿡뿡3</div>
+  <script>
+    var btnS = document.querySelectorAll('button');
+    var boxS = document.querySelectorAll('div');
+    for(let i = 0; i < 3 ; i ++){
+      btnS[i].addEventListener("click", function(){
+        boxS[i].style.display = "block";
+      });
+    };
+  </script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>애니메이트 애니메이트 뭐 어쩌구</title>
+    <style>
+      p {
+        width: 30px;
+        text-align: center;
+        height: 30px;
+        font-size: 10px;
+      }
+      .wrap {
+        background: tan;
+        width: 600px;
+        padding: 5px;
+        overflow: hidden;
+      }
+      .txt1 {
+        background: teal;
+      }
+    </style>
+  </head>
+  <body>
+    <button class="btn back">돌아왕..</button>
+    <button class="btn go">ㄱㄱ</button>
+    <div class="wrap">
+      <p class="txt1">간다</p>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script>
+      // 버튼을 눌러서 큰상자 안에서 10번 이내 움직이기
+      // 상자 안뚫고
+      // 근데 돌아오는것도 할줄 알아야함
+      $(document).ready(function () {
+      let count = 1;
+      let $txt1 = $('.txt1');
+      
+
+      $('.btn').on("click", function(){
+        if(!$txt1.is(":animated")){ //checked, selected, visible, hidden => 값 true. 그래서 if 구문에 사용
+if($(this).hasClass('back')){ //뒤로 간다
+          // console.log($(this));
+          count --;
+          console.log(count);
+          if(count < 1){
+            count = 1;
+            return false;
+          };
+          //애니메이트
+          $txt1.animate({ marginLeft: "-=10%" }, 300);
+        }else{ //앞으로 간다
+          count ++;
+          if(count > 10){
+            count = 10;
+            return false;
+          };
+          console.log(count);
+          //애니메이트
+          $txt1.animate({ marginLeft: "+=10%" }, 300);
+        };
+        };
+        
+      });
+
+
+
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>일반적인메뉴</title>
+      <link rel="stylesheet" href="./css/0228_menu_slide.css">
+  </head>
+  <body>
+    <header>
+      <div class="logo"></div>
+      <nav class="menu">
+        <ul class="gnb">
+          <li>
+            <a href="#">김멍멍월드</a>
+            <ul class="sub">
+              <li><a href="#">김멍멍 - 1</a></li>
+              <li><a href="#">김멍멍 - 2</a></li>
+              <li><a href="#">김멍멍 - 3</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">박야옹월드</a>
+            <ul class="sub">
+              <li><a href="#">박야옹 - 1</a></li>
+              <li><a href="#">박야옹 - 2</a></li>
+              <li><a href="#">박야옹 - 3</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">최기린월드</a>
+            <ul class="sub">
+              <li><a href="#">최기린 - 1</a></li>
+              <li><a href="#">최기린 - 2</a></li>
+              <li><a href="#">최기린 - 3</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </header>
+      <section class="imgWrapTop">
+        <div class="imgSlideTop">
+          <a class="slide_A" href="#">
+            <img class="slideIMG" src="./images/slide/slide_2.png" alt="img1">
+            <span class="imageText">김멍멍</span>
+          </a>
+          <a class="slide_A" href="#">
+            <img class="slideIMG" src="./images/slide/slide_3.png" alt="img2">
+            <span class="imageText">박왕왕</span>
+          </a>
+          <a class="slide_A" href="#">
+            <img class="slideIMG" src="./images/slide/slide_4.png" alt="img3">
+            <span class="imageText">최댕댕</span>
+          </a>
+        </div>
+      </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script>
+      $(function(){
+        
+      }); // 제이쿼리 끝
+    </script>
+    <script>
+      $(function(){
+        $(".gnb > li").on({
+          mouseenter : function(){
+          // alert('ㅠ');
+          $(this).find('.sub').stop().slideDown(500);},
+          mouseleave : function(){
+          $(this).find('.sub').stop().slideUp(500);
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
