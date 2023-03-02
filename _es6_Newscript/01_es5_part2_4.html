@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>es6_part2_4</title>
+</head>
+<body>
+  <script>
+    Math.max(4, 5, 6, 7);
+    console.log(Math.max(4, 5, 6, 7));
+    var num = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+    console.log(Math.max(...num));
+
+    console.log(['a', 'e', 'd'].sort());
+    // sort는 배열에만 사용
+    function 정렬(a){
+      console.log(...[...a].sort());
+    };
+    console.log(정렬('kimmungmung'));
+    
+    function 글자수세기(글){
+      var 결과 = {};
+      [...글].forEach(function(a){//개별 파라미터 = a
+        if(결과[a] > 0){
+          결과[a] ++
+        }else{
+          결과[a] = 1; //결과[a]라는 항목에 값이 없다는 것?
+        } 
+      });console.log(결과);
+    };
+    글자수세기('abcdefg');
+  </script>
+</body>
+</html>

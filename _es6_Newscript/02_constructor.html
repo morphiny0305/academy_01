@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>constructor</title>
+</head>
+<body>
+  
+  <script>
+    // var 학생1 = {name: '김멍멍', age: 10};
+    // var 학생2 = {name: '박멍멍', age: 10};
+    function 출석부(이름){
+      this.name = 이름,
+      this.age = 15,
+      this.sayHi =function(){
+        console.log("안녕...."+ this.name + '이다.');
+      }
+    };
+
+    var 학생1 = new 출석부('박');
+    var 학생2 = new 출석부('최최');
+
+    /* var 학생1 = {
+      name: "김멍멍",
+      age: 15,
+      sayHi:function(){
+        console.log("안녕...."+ this.name + '이다.');
+      }
+    }; */
+    console.log(학생1.name);
+    console.log(학생2.name);
+  </script>
+</body>
+</html>

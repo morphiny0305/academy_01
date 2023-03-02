@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ㅋㅋ슬라이드 세로 CSS</title>
+
+    <style>
+      *{margin: 0; padding: 0;}
+      .slider {
+        width: 600px;
+        height: 400px;
+        background: teal;
+        overflow: hidden;
+        position: relative;
+      }
+      .sliderList {
+        width: 600px;
+        height: 1200px;
+      }
+      .slider > div{position: absolute;left: 0; top:0;}
+      .sliderImg {float: left;
+        width: 600px;
+        transition: all 1s;
+        /* position: absolute; */
+        /* top: 0;
+        left: 0; */
+      }
+      a{width: 100%; height: 100%; display: block;}
+      .sliderImg  a > img {
+        display: block;
+        width: 100%;
+      }
+      /* .sliderImg:nth-child(2){display: none;} */
+      /* .sliderImg:last-child{display: none;} */
+    </style>
+  </head>
+  <body>
+    <div class="slider">
+      <div class="sliderList">
+        <div class="sliderImg">
+          <a href="#">
+            <img class="slideIMG" src="./images/FFIMG/slide1.png" alt="img1" />
+          </a>
+        </div>
+        <div class="sliderImg">
+          <a href="#">
+            <img class="slideIMG" src="./images/FFIMG/slide2.png" alt="img2" />
+          </a>
+        </div>
+        <div class="sliderImg">
+          <a href="#">
+            <img class="slideIMG" src="./images/FFIMG/slide3.png" alt="img3" />
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script>
+      $(function () {
+        // 제이쿼리 시작
+        var imgs = 2; //인덱스 방식으로 이미지 개수 지정
+        var nowImage = 0; //첫번째 이미지
+        start();
+        function start(){
+          $('.sliderImg').eq(0).siblings().css({"margin-top":"-800px"})
+          setInterval(cssSlide, 3000);
+        };
+        setInterval(cssSlide, 3000);
+        function cssSlide(){
+          
+          nowImage = nowImage == imgs ? 0 : nowImage += 1;
+          $('.sliderImg').eq(nowImage-1).siblings().css({"margin-top":"-800px"});
+          $('.sliderImg').eq(nowImage).siblings().css({"margin-top":"0px"});
+        };
+
+        cssSlide();
+        
+      }); // 제이쿼리 끝
+    </script>
+  </body>
+</html>

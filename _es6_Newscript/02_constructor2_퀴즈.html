@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>constructor2_퀴즈</title>
+</head>
+<body>
+  
+  <script>
+    // var 학생1 = {name: '김멍멍', age: 10};
+    // var 학생2 = {name: '박멍멍', age: 10};
+    function 출석부(이름){
+      this.name = 이름,
+      this.age = 15,
+      this.sayHi =function(){
+        console.log("안녕...."+ this.name + '이다.');
+      }
+    };
+
+    var 학생1 = new 출석부('박');
+    var 학생2 = new 출석부('최최');
+
+    /* var 학생1 = {
+      name: "김멍멍",
+      age: 15,
+      sayHi:function(){
+        console.log("안녕...."+ this.name + '이다.');
+      }
+    }; */
+    console.log(학생1.name);
+    console.log(학생2.name);
+
+
+    // 어떤 상품 2개 오브젝트 생성
+    // 함수 상품 기계 만들기 (출석부처럼)
+    // 상품이름, 가격, 부가가치세 (.1%) 
+
+    function product(name, price){
+      this.name = name,
+      this.price = price,
+      this.value = function(){
+        let somePrice = this.price * 0.1;
+        console.log('부가가치세 ' + somePrice + '입니다.' );
+      }
+    };
+    let object1 = new product("바가지", 10000);
+    let object2 = new product("사탕", 3000);
+    console.log(object1.value());
+    console.log(object2.value());
+  </script>
+</body>
+</html>

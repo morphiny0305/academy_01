@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>es6_part2_1</title>
+</head>
+<body>
+  <script>
+    var someOne = '김멍멍';
+    function textDestroy(a, b){
+      // console.log(a[1] + b);
+      console.log(a);
+      console.log(b);
+    };
+
+    textDestroy`야옹이달팽이${someOne}`;
+
+    var pants = 20;
+    var socks = 100;
+
+    `바지${pants} 양말${socks}`;
+    console.log(`바지${pants} 양말${socks}`);
+    function textDestroy2(a, b, c){
+      if(b == 0){console.log("바지업슴 양말" + c)}
+      // console.log(a[1] + b + a[0] + c);
+    };
+  </script>
+</body>
+</html>

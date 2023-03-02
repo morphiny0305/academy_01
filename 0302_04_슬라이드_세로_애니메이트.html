@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ㅋㅋ슬라이드4</title>
+
+    <style>
+      *{margin: 0; padding: 0;}
+      .slider {
+        width: 600px;
+        height: 400px;
+        background: teal;
+        overflow: hidden;
+        position: relative;
+      }
+      .sliderList {
+        width: 600px;
+        height: 1200px;
+      }
+      .slider > div{position: absolute;left: 0; top:0;}
+      .sliderImg {float: left;
+        width: 600px;
+        /* position: absolute; */
+        /* top: 0;
+        left: 0; */
+      }
+      a{width: 100%; height: 100%; display: block;}
+      .sliderImg  a > img {
+        display: block;
+        width: 100%;
+      }
+      /* .sliderImg:nth-child(2){display: none;} */
+      /* .sliderImg:last-child{display: none;} */
+    </style>
+  </head>
+  <body>
+    <div class="slider">
+      <div class="sliderList">
+        <div class="sliderImg">
+          <a href="#">
+            <img class="slideIMG" src="./images/FFIMG/slide1.png" alt="img1" />
+          </a>
+        </div>
+        <div class="sliderImg">
+          <a href="#">
+            <img class="slideIMG" src="./images/FFIMG/slide2.png" alt="img2" />
+          </a>
+        </div>
+        <div class="sliderImg">
+          <a href="#">
+            <img class="slideIMG" src="./images/FFIMG/slide3.png" alt="img3" />
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script>
+      $(function () {
+        // 제이쿼리 시작
+        // 애니메이트 함수 > position / left 값 활용 이미지 이동
+        var nowIndex = 0;
+        setInterval(aniSlide, 3000);
+        function aniSlide(){
+          if(nowIndex < 2){
+            nowIndex ++;
+          }else{nowIndex = 0}
+          // 그림 이동하기 > 위쪽으로 400px (이미지 높이)
+          var imgPosition = nowIndex * (-400) + "px";
+          console.log(imgPosition);
+          $(".sliderList").animate({top:imgPosition},500);
+        };
+
+        
+      }); // 제이쿼리 끝
+    </script>
+  </body>
+</html>

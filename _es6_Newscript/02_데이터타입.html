@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>데이터 타입</title>
+  <!-- 레퍼런스 데이터 타입 -->
+  <!-- primitive 데이터 타입 -->
+</head>
+<body>
+  
+  <script>
+    var name = '김멍멍';
+    var age = 100;
+    var man ={
+      name: 'kim',
+      age : 100
+    };
+
+    var name1 = '김';
+    var name2 = name1;
+        name1 = '박박';
+    
+        console.log(name1);
+        console.log(name2);
+        
+    // 레퍼런스 데이터 타입
+    var name3 = {name:"james"};
+    var name4 = name3;
+    name3.name = 'tnlqkf';
+    console.log(name3);
+        console.log(name4);
+
+    var 이름7 = {name: "ㄹㄹ"};
+    function 변경(obj){
+      obj = {name: "student"}; // 재할당
+    };
+    변경(이름7);
+
+    console.log(이름7);
+  </script>
+</body>
+</html>

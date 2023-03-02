@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>es6_part2_2</title>
+</head>
+<body>
+  <script>
+    function sum(a, b=10){
+      //es5, 6 문법
+      console.log(a+b);
+    };
+    sum(1);
+    sum(1, 50);
+
+    function something(a, b=2*5){
+      console.log(a+b);
+    };
+    something(1);
+    something(10, 2);
+
+    function something2(a, b=2*a){
+      console.log(a+b);
+    };
+    something2(3);
+
+    function 임시함수(){
+      return 50
+    };
+    function something3(a, b=임시함수()){
+      console.log(a+b)
+    };
+    something3(3);
+  </script>
+</body>
+</html>
