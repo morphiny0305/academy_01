@@ -58,10 +58,16 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <script>
       $(function(){
-        
+        //슬라이더 자동 - 페이드인으로 동작 - 3초간격
+        $(".imgSlideTop a:gt(0)").hide();
+        setInterval(function(){
+          $(".imgSlideTop a:first-child").fadeOut()
+          .next('a').fadeIn()
+          .end().appendTo(".imgSlideTop"); //선택한 요소 끝 부분에 insert
+        }, 3000);
       }); // 제이쿼리 끝
     </script>
-    <script>
+    <script> // 메뉴나오기
       $(function(){
         $(".gnb > li").on({
           mouseenter : function(){

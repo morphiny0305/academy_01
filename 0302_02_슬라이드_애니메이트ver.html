@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ㅋㅋ슬라이드애니메이트</title>
+    <link rel="stylesheet" href="./css/0228_menu_slide.css">
+
+    <style>
+      #imgslide{position: relative; top: 50px; width: 1000px; margin: auto;}
+      .imgs{overflow: hidden; position: relative; width: 1000px; height: 400px; background-color: #000;}
+      .imgs a{width: 100%;}
+      .imgs > img{width: 100%; position: absolute; transition: all 1s;}
+      .welcome{height: 60px; width: 480px; position: absolute; left: 0; right: 0; top: 0; bottom: 0; margin: auto; background: rgba(255, 255, 255, 0.5);
+      text-align: center; font-size: 20px;color: #fff;}
+      
+    </style>
+  </head>
+  <body>
+    <div class="all" id="imgslide">
+      <div class="imgs">
+        <a class="slide_A" href="#">
+          <img class="slideIMG" src="./images/slide/slide_2.png" alt="img1">
+          <span class="imageText">김멍멍</span>
+        </a>
+        <a class="slide_A" href="#">
+          <img class="slideIMG" src="./images/slide/slide_3.png" alt="img2">
+          <span class="imageText">박왕왕</span>
+        </a>
+        <a class="slide_A" href="#">
+          <img class="slideIMG" src="./images/slide/slide_4.png" alt="img3">
+          <span class="imageText">최댕댕</span>
+        </a>
+        <!-- <div class="welcome">
+          <h2>웰컴투 김멍멍월드</h2>
+        </div> -->
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script>
+      $(function (){
+        // 제이쿼리 시작
+        var imgs = 2; //인덱스 방식으로 이미지 개수 지정
+        var nowImage = 0; //첫번째 이미지
+        start();
+        function start(){
+          $('.imgs > img').eq(0).siblings().css({"margin-left":"-2000px"})
+          setInterval(cssSlide, 3000);
+        };
+        setInterval(cssSlide, 3000);
+        function cssSlide(){
+          
+          nowImage = nowImage == imgs ? 0 : nowImage += 1;
+          $('.imgs > img').eq(nowImage-1).siblings().css({"margin-left":"-2000px"});
+          $('.imgs > img').eq(nowImage).siblings().css({"margin-left":"0px"});
+        };
+
+        cssSlide();
+        /* // 10이 3보다 크면 조건에 맞으면 (맞습니다) / 그렇지 않으면 (아닙니다) 출력
+          var a = 10;
+          var b = 3;
+          var result = a > b ? "맞아요" : "아님" ; */
+      }); // 제이쿼리 끝
+    </script>
+  </body>
+</html>
