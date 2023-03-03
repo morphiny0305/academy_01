@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>getter setter</title>
+</head>
+<body>
+  
+  <script>
+    // getter, setter 
+    var hooman = {
+      name : '추추',
+      age : 111,
+      get nextAge(){ //getter 가져다 주세영...
+        return this.age + 1;
+      },
+      set setAge(나이){ //setter = 데이터 입력  > 수정됨
+        this.age = parseInt(나이);
+      } 
+    };
+// console.log(hooman.nextAge);
+
+class 사람{
+  constructor(){
+    this.name = '박박';
+    this.age = 20;
+  }
+  get nextAge(){
+    return this.age + 1;
+  };
+  set setAge(나이){
+    this.age = 나이;
+  };
+};
+
+var man1 = new 사람();
+
+/* var 강1 = {type: 'ㅍㅍ', color:'white'}
+var 강2 = {type: '진도', color:'black'} */
+
+class 멍멍{
+  constructor(type, color){
+    this.type = type;
+    this.color = color;
+  }
+  올드(){
+    if(this instanceof 야옹){ // "a" instanceof "b" > b로부터 가져다가 a에 써주세영
+      this.age++;
+    }
+  }
+};
+
+var 강3 = new 멍멍('폼폼', 'white');
+
+class 야옹 extends 멍멍{
+  constructor(type, color, age){
+    super(type, color);
+    this.age = age;
+  }
+};
+
+var 냥1 = new 야옹('똥멍멍', '누렁', 10);
+  </script>
+  
+</body>
+</html>

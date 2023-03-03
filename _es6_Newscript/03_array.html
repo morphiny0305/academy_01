@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>array 적용 함수</title>
+</head>
+<body>
+  
+  <script>
+    Array.prototype.remove4 = function(){
+      // this 에서 4를 찾아 제거하기
+      for(var i = 0; i < this.length ; i++){
+        if(this[i]==4){
+          this.splice(i, 1);
+        }
+      }
+    };
+    let arr = [1, 2, 3, 4];
+    arr.remove4();
+    console.log(arr);
+
+    var 부모 = {
+      name : '김멍멍',
+      age : 200
+    };
+
+    var 자식 = Object.create(부모);
+        자식.age = 5000;
+    console.log(자식.age);
+    console.log(자식);
+    console.log(부모.age);
+    var 손자 = Object.create(자식);
+    console.log(손자.age);
+
+    // class로 만들고 extends 상속 받음
+
+    class 뉴부모{
+      constructor(이름, 나이){
+        this.name = 이름;
+        this.age = 나이;
+        this.sayHello = function(){
+          console.log('빡빡하의');
+        };
+      }
+      sayHi(){console.log('빡.....');};
+    };
+
+    var 새자식 = new 뉴부모('뿌뿌', 100);
+    console.log(새자식.sayHello());
+    console.log(새자식.sayHi());
+  </script>
+  
+</body>
+</html>

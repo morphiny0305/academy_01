@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>constructor2_퀴즈</title>
+</head>
+<body>
+  
+  <script>
+    function parentA(){
+      this.name = "김멍";
+
+    };
+    var a = new parentA()
+
+    a.__proto__.name = '박멍';
+
+    console.log(a.name);
+
+    function Student(name, ages){
+      this.name = name;
+      this.age = ages;
+    };
+
+    Student.prototype.sayHi= function(){
+      console.log('크큭.. ' + this.name + ' 이다..크큭..' );
+      console.log(this);
+    };
+    var man1 = new Student('김멍멍', 20);
+    
+    var object = {
+      sayHi: ()=>{
+        console.log(this);
+      }
+    };
+    console.log(object.sayHi());
+  </script>
+  
+</body>
+</html>

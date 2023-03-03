@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>getter setter</title>
+</head>
+<body>
+  
+  <script>
+    class NPC_Character{
+      constructor(){
+        this.체력 = 100; //인스턴스 
+        this.공격력 = 10; //인스턴스 
+      };
+      get battlePoint(){
+        return this.체력 + this.공격력;
+      };
+      set heal(point){
+        this.체력 = this.체력 + point
+      };
+    };
+
+    var 아주쎈놈 = new NPC_Character();
+  </script>
+  
+</body>
+</html>

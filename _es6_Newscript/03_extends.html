@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>extends</title>
+</head>
+<body>
+  
+  <script>
+    class 할아버지{
+      constructor(name){
+        this.성 = '빡빡';
+        this.이름 = name;
+      }
+      sayHi(){console.log('틀.......');};
+    };
+
+    var 할배1 = new 할아버지('영');
+
+    class 아버지 extends 할아버지{
+      constructor(name){
+        super(name); //부모 클래스의 프로토 타입
+        this.나이 = 5;
+      }
+      sayHi22(){console.log('느이 부모님...');super.sayHi();};
+      
+    };
+    var 애비1 = new 아버지('일');
+    // var a = new 아버지('이');
+    // console.log(a.sayHi());
+    // console.log(a.sayHi22());
+    console.log(애비1);
+  </script>
+  
+</body>
+</html>
