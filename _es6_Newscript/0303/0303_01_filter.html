@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>필터링</title>
+  <link rel="stylesheet" href="./css/c12.css">
+</head>
+<body>
+  <header>
+    <h1>필터링</h1>
+  </header>
+  <table id="rates">
+    <thead>
+      <tr>
+        <th>이름</th>
+        <th>급여(원)</th>
+      </tr>
+    </thead>
+    <tbody>
+    </tbody>
+  </table>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+  <script>
+    $(function(){ //제이쿼리 시작
+
+      // 데이터를 배열에 추가
+      var people = [
+      {이름: '김멍멍', 
+       rate: 10000},
+       {이름: '최기린', 
+       rate: 30000},
+       {이름: '박야옹', 
+       rate: 90000},
+       {이름: '이치타', 
+       rate: 50000},
+    ];
+
+    // 데이터 정적 필터링
+
+
+    // 각각의 시급이 지정된 범위에 해당하는지 확인하고 출력하는 과정
+
+    var result = []; // 새로운 배열을 생성
+
+    people.forEach(function(person){ //배열 내의 세부 아이템(데이터) 값
+      if(person.rate >= 40000 && person.rate <= 95000){ //조건 범위 설정
+        result.push(person); // 새로운 배열에 추가
+      };
+    }); //people.forEach 끝
+
+console.log(result);
+    });//제이쿼리 끝
+  </script>
+</body>
+</html>

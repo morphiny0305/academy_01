@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>이미지 갤러리 필터링</title>
+  <link rel="stylesheet" href="./css/c12.css">
+</head>
+<body>
+  <header>
+    <h1>이미지 갤러리 필터링</h1>
+  </header>
+  <div id="buttons"></div>
+  <div id="gallery">
+    <img src="./filter_img/icon1.png" data-tags="Animal, Candy1" alt="Unicorn">
+    <img src="./filter_img/icon2.png" data-tags="Eyes, Candy1" alt="Unicorn">
+    <img src="./filter_img/icon3.png" data-tags="Animal, Candy1" alt="Unicorn">
+    <img src="./filter_img/icon4.png" data-tags="Yellow, Candy2" alt="Unicorn">
+    <img src="./filter_img/icon5.png" data-tags="Cake, Candy2" alt="Unicorn">
+    <img src="./filter_img/icon6.png" data-tags="Cake, Candy2" alt="Unicorn">
+    <img src="./filter_img/icon7.png" data-tags="Animal, Candy3" alt="Unicorn">
+    <img src="./filter_img/icon8.png" data-tags="Eyes, Candy3" alt="Unicorn">
+    <img src="./filter_img/icon9.png" data-tags="Yellow, Candy3" alt="Unicorn">
+  </div>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <script>
+    $(function(){ //제이쿼리 시작
+      // 이미지 전체 선택 변수
+      var $imgs = $("#gallery img");
+      var $btns = $("#buttons");
+      var tagged = {}; // 빈 객체 생성
+
+      $imgs.each(function(){
+        var img = this;
+        var tags = $(this).data('tags'); //태그를 변수에 담음
+        
+        if(tags){
+          tags.split(',').forEach(function(tagName){
+            if(tagged[tagName] == null){ // 객체에 태그가 설정되어 있지 않다면
+              tagged[tagName] = [];
+            }
+            tagged[tagName].push(img); // 배열에 태그를 가진 이미지 추가
+          });
+        };
+      }); // each 함수의 끝
+
+      // 버튼을 만들고 필터링 코드를 작성
+      $('<button/>',{
+        text: '모두',
+        class: 'active',
+        click: function(){
+          $(this).addClass("active").siblings().removeClass("active");
+          $imgs.show();
+        }
+      }).appendTo($btns);
+
+      $.each(tagged, function(tagName){
+        // 태그 이름을 가져와서 루프실행
+        $('<button/>', {
+          text: tagName + '(' + tagged[tagName].length + ')', // 버튼 이름 = 태그 이름
+          click: function(){
+            $(this).addClass("active").siblings().removeClass("active");
+          $imgs.hide()
+                .filter(tagged[tagName])
+                .show();
+          }
+        }).appendTo($btns);
+      });
+
+
+
+    }());//제이쿼리 끝 // 페이지가 로딩되면 즉시 실행
+
+  </script>
+</body>
+</html>
